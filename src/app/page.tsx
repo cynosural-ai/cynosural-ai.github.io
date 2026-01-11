@@ -83,7 +83,7 @@ export default function Home() {
               </h2>
               
               <p className="text-lg text-blue-100 mb-6 leading-relaxed">
-              Libraries and museums contain vast collections of scanned documents that are searchable by metadata but not by text. We are working on changing that by applying state-of-the-art OCR models to extract the full text from these archives, opening them up for research, exploration, and AI training.
+              Libraries and museums contain vast collections of scanned documents that are searchable by metadata but not by content. We are working on changing that by applying state-of-the-art OCR models to extract the full text from these archives, opening them up for research, exploration, and AI training.
               </p>
 
               <p className="text-lg text-blue-100 mb-8 leading-relaxed">
