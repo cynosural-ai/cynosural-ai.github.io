@@ -11,7 +11,12 @@ export const metadata: Metadata = {
   title: "Cynosural AI Lab",
   description: "Non-profit organization dedicated to AI research and development.",
   icons: {
-    icon: "/cynosural_logo.ico",
+    icon: [
+      { url: "/cynosural_logo.ico", sizes: "any" },
+      { url: "/cynosural_logo.ico", type: "image/x-icon" },
+    ],
+    shortcut: "/cynosural_logo.ico",
+    apple: "/cynosural_logo.ico",
   },
 };
 

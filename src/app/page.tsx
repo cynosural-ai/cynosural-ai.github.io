@@ -43,7 +43,7 @@ export default function Home() {
             className="p-3 rounded-full bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer animate-bounce"
             aria-label="Scroll to content"
           >
-            <ArrowDown className="w-6 h-6 text-gray-400" />
+            <ArrowDown className="w-6 h-6 text-gray-400 flex-shrink-0" />
           </button>
         </motion.div>
       </section>
@@ -128,7 +128,7 @@ export default function Home() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#24292e] text-white px-4 py-2.5 rounded-lg font-semibold hover:bg-[#2f363d] transition-colors text-sm"
                   >
-                    <Github className="w-4 h-4" />
+                    <Github className="w-4 h-4 flex-shrink-0" />
                     Code
                   </a>
                 </div>
