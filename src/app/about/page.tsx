@@ -2,31 +2,50 @@ export default function About() {
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-4xl mx-auto px-4 py-20">
-        <h1 className="text-4xl font-bold mb-8 text-gray-900">About Cynosural AI Lab</h1>
+        <h1 className="text-4xl font-bold mb-12 text-gray-900">About</h1>
         
-        <div className="prose prose-lg text-gray-600">
-          <p className="mb-6">
-            Cynosural AI Lab is a recently founded non-profit organization focused on the intersection of artificial intelligence and human advancement. 
-            Our name, "Cynosural," refers to something that serves as a focal point or a guiding star—reflecting our mission to guide the development of AI towards a beneficial future.
-          </p>
+        <div className="space-y-12">
+          {/* About Section */}
+          <section>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              We are a newly created independent AI research lab based in Madrid, Spain. Our work focuses on applying AI to projects that benefit the public—starting with cultural heritage and open datasets.
+            </p>
+          </section>
 
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900">Our Mission</h2>
-          <p className="mb-6">
-            To conduct cutting-edge research in artificial intelligence while ensuring that the benefits of these technologies are accessible to all. 
-            We believe in open science, ethical development, and the power of community collaboration.
-          </p>
+          {/* Vision Section */}
+          <section>
+            <h2 className="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-4">Our Vision</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              We believe AI research should serve the public interest. By releasing open datasets, code, and tools, we aim to democratize access to AI capabilities and preserve cultural knowledge for future generations.
+            </p>
+          </section>
 
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900">What We Do</h2>
-          <ul className="list-disc pl-6 mb-6 space-y-2">
-            <li>Open Source AI Model Development</li>
-            <li>Research into AI Safety and Alignment</li>
-            <li>Educational Workshops and Resources</li>
-            <li>Collaborative Projects with other Non-Profits</li>
-          </ul>
+          {/* Goals Section */}
+          <section>
+            <h2 className="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-4">Our Goals</h2>
+            <ul className="text-lg text-gray-600 space-y-3 list-none pl-0">
+              <li className="flex items-start gap-3">
+                <span className="text-[#209BD0] flex-shrink-0 leading-[1.75rem]">●</span>
+                <span className="leading-relaxed">Release open datasets and tools for research and AI training</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#209BD0] flex-shrink-0 leading-[1.75rem]">●</span>
+                <span className="leading-relaxed">Make historical archives searchable and accessible</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#209BD0] flex-shrink-0 leading-[1.75rem]">●</span>
+                <span className="leading-relaxed">Collaborate with cultural institutions and the open-source community</span>
+              </li>
+            </ul>
+          </section>
 
-          <p>
-            We are just getting started. Join us on our journey to shape the future of AI.
-          </p>
+          {/* Funding Section */}
+          <section>
+            <h2 className="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-4">Funding</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              We are currently self-funded, using our own resources to bootstrap this initiative.
+            </p>
+          </section>
         </div>
       </div>
     </div>

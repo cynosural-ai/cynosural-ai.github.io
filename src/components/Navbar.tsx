@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
@@ -11,7 +10,6 @@ export default function Navbar() {
 
   const navigation = [
     { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
   ];
 
   return (
@@ -19,16 +17,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-              <div className="relative h-8 w-8">
-                 <Image 
-                  src="/cynosural_logo_medium.png" 
-                  alt="Cynosural Logo" 
-                  fill 
-                  className="object-contain"
-                />
-              </div>
-              <span className="font-bold text-xl text-gray-900 tracking-tight">Cynosural</span>
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <span className="font-jost text-xl text-gray-900 tracking-tight">Cynosural</span>
             </Link>
           </div>
           
@@ -37,7 +27,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-600 hover:text-[#209BD0] px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {item.name}
               </Link>
@@ -63,7 +53,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#209BD0] hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               {item.name}
