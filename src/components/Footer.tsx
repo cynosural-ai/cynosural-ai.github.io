@@ -45,12 +45,18 @@ export default function Footer() {
               <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
                 Learn More
               </h3>
-              <div>
-                <Link 
+              <div className="flex flex-col space-y-3">
+                <Link
                   href="/about"
                   className="text-gray-600 hover:text-[#209BD0] transition-colors"
                 >
                   About
+                </Link>
+                <Link
+                  href="/blog"
+                  className="text-gray-600 hover:text-[#209BD0] transition-colors"
+                >
+                  Blog
                 </Link>
               </div>
             </div>
