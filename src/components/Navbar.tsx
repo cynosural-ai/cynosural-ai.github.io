@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
@@ -17,7 +18,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center gap-2">
+              <Image
+                src="/cynosural_logo_small.png"
+                alt="Cynosural"
+                width={28}
+                height={28}
+                className="rounded-full"
+                priority
+              />
               <span className="font-jost text-xl text-gray-900 tracking-tight">Cynosural</span>
             </Link>
           </div>
