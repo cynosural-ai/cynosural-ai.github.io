@@ -1,0 +1,19 @@
+{
+  "title": "Acerca de",
+  "intro": "Somos un laboratorio independiente de investigación en IA con sede en Madrid, España. Nuestro trabajo se centra en el desarrollo de proyectos de investigación en IA de código abierto que tengan un impacto positivo en la sociedad. Actualmente, nos enfocamos en hacer más accesibles los archivos históricos españoles.",
+  "vision": {
+    "heading": "Nuestra visión",
+    "body": "Creemos que la mejor forma de avanzar en la investigación en IA es a través de la apertura. Al publicar datasets, modelos y código como código abierto, las personas pueden usarlos, mejorarlos e impulsar el campo juntos."
+  },
+  "goals": {
+    "heading": "Nuestros objetivos",
+    "items": [
+      "Contribuir a la investigación en IA mediante datasets, herramientas y modelos abiertos que sirvan al bien público",
+      "Contribuir al creciente papel de España en el panorama internacional de la IA"
+    ]
+  },
+  "funding": {
+    "heading": "Financiación",
+    "body": "Actualmente nos autofinanciamos, utilizando nuestros propios recursos para poner en marcha esta iniciativa."
+  }
+}

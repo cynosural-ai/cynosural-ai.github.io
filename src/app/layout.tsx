@@ -3,13 +3,17 @@ import { Inter, Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LocaleProvider } from "@/i18n/LocaleProvider";
+import enCommon from "@/dictionaries/en/common.json";
 
 const inter = Inter({ subsets: ["latin"] });
 export const jost = Jost({ subsets: ["latin"], variable: "--font-jost" });
 
+// Build-time default metadata (default locale). The LocaleProvider updates the
+// document title/description at runtime once the user's locale is resolved.
 export const metadata: Metadata = {
-  title: "Cynosural AI Lab",
-  description: "Non-profit organization dedicated to AI research and development.",
+  title: enCommon.metadata.title,
+  description: enCommon.metadata.description,
   icons: {
     icon: [
       { url: "/cynosural_logo.ico", sizes: "any" },
@@ -28,11 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${jost.variable}`}>
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+        <LocaleProvider>
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+        </LocaleProvider>
       </body>
     </html>
   );

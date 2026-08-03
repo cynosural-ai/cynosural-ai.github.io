@@ -1,0 +1,28 @@
+{
+  "title": "Archivos Históricos",
+  "intro": "Las bibliotecas y archivos de España albergan amplias colecciones de documentos históricos digitalizados que se pueden buscar por metadatos, pero no por lo que realmente dicen. Aplicamos OCR para extraer el texto completo y hacer que estas colecciones sean explorables por su contenido. Los ejemplos siguientes muestran páginas representativas del resultado: cada región se detecta de forma automática y el texto extraído aparece a su lado.",
+  "captionPrefix": "Pasa el cursor o toca una región para resaltar su texto",
+  "bneLink": "Biblioteca Nacional de España",
+  "viewer": {
+    "extractedText": "Texto extraído",
+    "regions": "regiones",
+    "imgAlt": "Página de documento histórico con regiones OCR"
+  },
+  "examples": [
+    {
+      "label": "Índice",
+      "caption": "Índice de una publicación de principios del siglo XIX. Encabezados, entradas de lista y números de página se detectan como tipos de región distintos.",
+      "src": "/historical-archives/le_0011.json"
+    },
+    {
+      "label": "Texto legal (s. XVI)",
+      "caption": "Una página de legislación fiscal del siglo XVI en español arcaico — nótese grafías como \u201calcaualas\u201d y \u201couieren\u201d. Prosa densa a dos columnas.",
+      "src": "/historical-archives/co_0079.json"
+    },
+    {
+      "label": "Enciclopedia heráldica",
+      "caption": "Un artículo de una enciclopedia de linajes nobiliarios, con regiones de Texto estructuradas además de regiones de Nota al pie detectadas por separado.",
+      "src": "/historical-archives/img_0317.json"
+    }
+  ]
+}

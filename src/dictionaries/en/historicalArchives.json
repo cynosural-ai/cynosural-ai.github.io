@@ -1,0 +1,28 @@
+{
+  "title": "Historical Archives",
+  "intro": "Spain's libraries and archives hold vast collections of scanned historical documents that are searchable by metadata, but not by what they actually say. We apply OCR to extract the full text and make these collections explorable by content. The examples below show pages from across the output — each region is detected automatically, and the extracted text appears beside it.",
+  "captionPrefix": "Hover or tap a region to highlight its text",
+  "bneLink": "Biblioteca Nacional de España",
+  "viewer": {
+    "extractedText": "Extracted text",
+    "regions": "regions",
+    "imgAlt": "Historical document page with OCR regions"
+  },
+  "examples": [
+    {
+      "label": "Table of contents",
+      "caption": "Table of contents from an early 19th-century publication. Headers, list entries, and page numbers detected as distinct region types.",
+      "src": "/historical-archives/le_0011.json"
+    },
+    {
+      "label": "Legal text (16th c.)",
+      "caption": "A 16th-century tax-law page in archaic Spanish — note spellings like \u201calcaualas\u201d and \u201couieren\u201d. Dense two-column prose.",
+      "src": "/historical-archives/co_0079.json"
+    },
+    {
+      "label": "Heraldic encyclopedia",
+      "caption": "An article from a noble-lineage encyclopedia, with structured Text regions plus Footnote regions detected separately.",
+      "src": "/historical-archives/img_0317.json"
+    }
+  ]
+}

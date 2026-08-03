@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/i18n/LocaleProvider";
 
 type Block = {
   id: string;
@@ -38,6 +39,7 @@ function colorsFor(label: string) {
 }
 
 export default function OcrExampleViewer({ data }: { data: OcrData }) {
+  const t = useTranslation("historicalArchives");
   const [hovered, setHovered] = useState<number | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const listRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -61,7 +63,7 @@ export default function OcrExampleViewer({ data }: { data: OcrData }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={data.image}
-              alt="Historical document page with OCR regions"
+              alt={t.viewer.imgAlt}
               className="block w-full h-auto select-none"
               draggable={false}
             />
@@ -117,8 +119,8 @@ export default function OcrExampleViewer({ data }: { data: OcrData }) {
         {/* Text panel */}
         <div className="flex flex-col max-h-[640px] lg:max-h-[720px]">
           <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
-            <h3 className="text-sm font-semibold text-gray-900">Extracted text</h3>
-            <span className="text-xs text-gray-400">{data.blocks.length} regions</span>
+            <h3 className="text-sm font-semibold text-gray-900">{t.viewer.extractedText}</h3>
+            <span className="text-xs text-gray-400">{data.blocks.length} {t.viewer.regions}</span>
           </div>
           <div className="flex-1 overflow-y-auto divide-y divide-gray-100">
             {data.blocks.map((block, i) => {

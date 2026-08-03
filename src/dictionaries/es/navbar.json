@@ -1,0 +1,11 @@
+{
+  "links": {
+    "historicalArchives": "Archivos Históricos",
+    "about": "Acerca de"
+  },
+  "langToggle": {
+    "english": "EN",
+    "spanish": "ES",
+    "selectLanguage": "Seleccionar idioma"
+  }
+}
