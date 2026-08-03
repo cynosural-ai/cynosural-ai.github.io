@@ -1,0 +1,183 @@
+{
+  "image": "/historical-archives/le_0011.jpg",
+  "width": 1000,
+  "height": 1620,
+  "blocks": [
+    {
+      "id": "b0",
+      "bbox": [
+        729,
+        53,
+        784,
+        107
+      ],
+      "label": "Page-header",
+      "content": "vij"
+    },
+    {
+      "id": "b1",
+      "bbox": [
+        327,
+        101,
+        555,
+        151
+      ],
+      "label": "Section-header",
+      "content": "TABLA"
+    },
+    {
+      "id": "b2",
+      "bbox": [
+        80,
+        211,
+        801,
+        257
+      ],
+      "label": "Section-header",
+      "content": "DE LAS MEMORIAS Y PARRAFOS"
+    },
+    {
+      "id": "b3",
+      "bbox": [
+        207,
+        292,
+        657,
+        344
+      ],
+      "label": "Text",
+      "content": "que contiene este Tomo."
+    },
+    {
+      "id": "b4",
+      "bbox": [
+        179,
+        390,
+        696,
+        434
+      ],
+      "label": "Section-header",
+      "content": "MEMORIA LXXVII."
+    },
+    {
+      "id": "b5",
+      "bbox": [
+        77,
+        451,
+        796,
+        649
+      ],
+      "label": "List-item",
+      "content": "Seguida de la historia de la real fabrica de Guadalaxara hasta el año de 1740, pág. . . . . . I."
+    },
+    {
+      "id": "b6",
+      "bbox": [
+        72,
+        645,
+        796,
+        795
+      ],
+      "label": "List-item",
+      "content": "Visita de D. Joseph de la Quintana, id.\nObservaciones de Don Antonio Martínez de Murcia. . . . . . . 9."
+    },
+    {
+      "id": "b7",
+      "bbox": [
+        74,
+        797,
+        796,
+        894
+      ],
+      "label": "List-item",
+      "content": "Reglamento general para las maniobras de lanas. . . . . . 10."
+    },
+    {
+      "id": "b8",
+      "bbox": [
+        72,
+        894,
+        801,
+        951
+      ],
+      "label": "List-item",
+      "content": "Medios para dar salida á los paños. 64."
+    },
+    {
+      "id": "b9",
+      "bbox": [
+        72,
+        949,
+        801,
+        1003
+      ],
+      "label": "List-item",
+      "content": "Providencia para hacer astillas. . 76."
+    },
+    {
+      "id": "b10",
+      "bbox": [
+        72,
+        999,
+        801,
+        1053
+      ],
+      "label": "List-item",
+      "content": "Mejora de los paños. . . . . . . 76."
+    },
+    {
+      "id": "b11",
+      "bbox": [
+        72,
+        1049,
+        801,
+        1155
+      ],
+      "label": "List-item",
+      "content": "Pruebas hechas para fabricar ratinas. . . . . . . 77."
+    },
+    {
+      "id": "b12",
+      "bbox": [
+        72,
+        1149,
+        801,
+        1253
+      ],
+      "label": "List-item",
+      "content": "Reglamento para el pago de las labores. . . . . . 78."
+    },
+    {
+      "id": "b13",
+      "bbox": [
+        72,
+        1247,
+        801,
+        1354
+      ],
+      "label": "List-item",
+      "content": "Reglamento económico de los texedores. . . . . . 113."
+    },
+    {
+      "id": "b14",
+      "bbox": [
+        650,
+        1354,
+        704,
+        1393
+      ],
+      "label": "Text",
+      "content": "Id."
+    },
+    {
+      "id": "b15",
+      "bbox": [
+        16,
+        1572,
+        335,
+        1598
+      ],
+      "label": "Page-footer",
+      "content": "(c) 2007 Ministerio de Cultura"
+    }
+  ]
+}

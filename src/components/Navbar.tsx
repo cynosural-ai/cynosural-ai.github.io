@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigation = [
+    { name: "Historical Archives", href: "/historical-archives" },
     { name: "About", href: "/about" },
   ];
 
