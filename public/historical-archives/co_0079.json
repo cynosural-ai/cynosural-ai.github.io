@@ -1,0 +1,293 @@
+{
+  "image": "/historical-archives/co_0079.jpg",
+  "width": 1470,
+  "height": 2153,
+  "blocks": [
+    {
+      "id": "b0",
+      "bbox": [
+        598,
+        64,
+        748,
+        119
+      ],
+      "label": "Section-header",
+      "content": "Tabla."
+    },
+    {
+      "id": "b1",
+      "bbox": [
+        78,
+        119,
+        688,
+        330
+      ],
+      "label": "Text",
+      "content": "Que las yglesias y monesterios y personas d'ordé q' tiené mercedes por preui llegios a libraças lo pidan ante los juezes seglares et no ante los ecclesiasticos so cierta pena. Ley. cxxvij. fo. xxxij."
+    },
+    {
+      "id": "b2",
+      "bbox": [
+        75,
+        322,
+        682,
+        489
+      ],
+      "label": "Text",
+      "content": "Que los juezes ordinarios libren los pleytos delas alcaualas cõtra los mo nederos o officiales delas casas d'mo neda. Ley. cxxviij. folio. xxxij."
+    },
+    {
+      "id": "b3",
+      "bbox": [
+        71,
+        481,
+        679,
+        569
+      ],
+      "label": "Text",
+      "content": "Fasta que tiempo an de ser demandadas las alcaualas. Ley. cxxix. fo. xxxij."
+    },
+    {
+      "id": "b4",
+      "bbox": [
+        71,
+        562,
+        679,
+        769
+      ],
+      "label": "Text",
+      "content": "Que las justicias haban execució por los mrs delas rentas et preuillegios y en que casa a de estar preso el arrendador o recaudador mayor pendiente la execucion. Ley. cxxx. folio. xxxij."
+    },
+    {
+      "id": "b5",
+      "bbox": [
+        66,
+        762,
+        677,
+        890
+      ],
+      "label": "Text",
+      "content": "Que los juezes q' ouieren de librar los pleytos d'las alcaualas no pidã ni lleuë acessorias so cierta pëa. l. cxxxj. f. xxxiij."
+    },
+    {
+      "id": "b6",
+      "bbox": [
+        62,
+        883,
+        674,
+        1010
+      ],
+      "label": "Text",
+      "content": "Que si dos sentecias ouiere cõformes enlas rëtas reales q' no aya mas apela ció ni duplicació. Ley. cxxxiij. fo. xxxiij."
+    },
+    {
+      "id": "b7",
+      "bbox": [
+        61,
+        1004,
+        674,
+        1130
+      ],
+      "label": "Text",
+      "content": "Los derechos q' an de lleuar los executores delas execuciones q' bizieré por mrs delas rëtas. Ley. cxxxiij. fo. xxxiij."
+    },
+    {
+      "id": "b8",
+      "bbox": [
+        60,
+        1123,
+        672,
+        1369
+      ],
+      "label": "Text",
+      "content": "Que el arrédador mayor sea tenido al tiempo delas pagas de estar enla cabe ca de su partido / o su hazedor porque sean requeridos con las libraças y si no lo bizieré prouea esta ley alos libra dos. Ley. cxxiiiij. folio. xxxiij."
+    },
+    {
+      "id": "b9",
+      "bbox": [
+        57,
+        1362,
+        669,
+        1488
+      ],
+      "label": "Text",
+      "content": "Que arrédadores mayores ni menores ni fatores ni otros por ellos no baratë ni coechë so cierta pëa. l. cxxxv. f. xxxiij."
+    },
+    {
+      "id": "b10",
+      "bbox": [
+        56,
+        1481,
+        668,
+        1610
+      ],
+      "label": "Text",
+      "content": "Que por espera de tiempo ni por otra cosa no se lieue cobecho so cierta pena. Ley. cxxxvj. folio. xxxiij."
+    },
+    {
+      "id": "b11",
+      "bbox": [
+        716,
+        122,
+        1326,
+        291
+      ],
+      "label": "Text",
+      "content": "Que personas algüas no hagã ni cõsien tã fazer ferias ni mercados frãcos por su propia autoridad ni otras vayan a ellos so cierta pena. l. cxxxrj. fo. xxiiiij."
+    },
+    {
+      "id": "b12",
+      "bbox": [
+        713,
+        283,
+        1322,
+        491
+      ],
+      "label": "Text",
+      "content": "Si los caualleros o otras personas bizieren tomas enlos mrs delas rëtas et no quisieré dar testimonio de la toma que los concejos donde se bizieren lo ayan a dar. Ley. cxxxvij. fol. xxiiiij."
+    },
+    {
+      "id": "b13",
+      "bbox": [
+        710,
+        481,
+        1322,
+        690
+      ],
+      "label": "Text",
+      "content": "Quando algü caualló o persona poderosa haze toma d'los mrs d'las rëtas al cõce jo q' los tiené sobre si/o al arrédador me nor eñl lugar q' no es suyo q' an d' fazer el cõcejo y el arrédador. l. cxxxix. f. xxiiiij."
+    },
+    {
+      "id": "b14",
+      "bbox": [
+        709,
+        682,
+        1321,
+        771
+      ],
+      "label": "Text",
+      "content": "Del juramento que an de hazer los grandes del reyno. Ley. cxl. fo. xxiiiij."
+    },
+    {
+      "id": "b15",
+      "bbox": [
+        706,
+        762,
+        1320,
+        811
+      ],
+      "label": "Text",
+      "content": "Seguro pa los arrédadores. l. cxlj. f. xxv."
+    },
+    {
+      "id": "b16",
+      "bbox": [
+        706,
+        803,
+        1319,
+        972
+      ],
+      "label": "Text",
+      "content": "Que el fin et quito q' sus altezas dieren a caualleros o otras personas q' no pare perjuyzio al arrendador q' primero tenia arrédada la rëta. Ley. cxlii. fo. xxiv."
+    },
+    {
+      "id": "b17",
+      "bbox": [
+        704,
+        963,
+        1318,
+        1130
+      ],
+      "label": "Text",
+      "content": "Que la renta rematada de todo remate no pueda ser quitadaporque se diga que ouo engaño allëde dela meytad d'l justo precio. Ley. cxliij. folio. xxiv."
+    },
+    {
+      "id": "b18",
+      "bbox": [
+        703,
+        1123,
+        1317,
+        1249
+      ],
+      "label": "Text",
+      "content": "Que el arrendador menor de al mayor a cierto plazo los traslados d'los puille gios cõ cartas d' pago. l. cxliij. fo. xxiv."
+    },
+    {
+      "id": "b19",
+      "bbox": [
+        702,
+        1242,
+        1316,
+        1369
+      ],
+      "label": "Text",
+      "content": "Que las justicias executé las leyes de ste quaderno so las protestaciones mo deradas. Ley. cxlv. folio. xxiv."
+    },
+    {
+      "id": "b20",
+      "bbox": [
+        700,
+        1362,
+        1314,
+        1527
+      ],
+      "label": "Text",
+      "content": "Que el mercader o recuero q' truxiere al lugar dõde biue bestias de albarda o mercadurias muestre el testimonio so cierta pena. Ley. cxlvj. folio. xxiv."
+    },
+    {
+      "id": "b21",
+      "bbox": [
+        700,
+        1520,
+        1313,
+        1610
+      ],
+      "label": "Text",
+      "content": "Sobre las ferias de Medina de rio se co. Ley. cxlvij. folio. xxvj."
+    },
+    {
+      "id": "b22",
+      "bbox": [
+        182,
+        1638,
+        1174,
+        1712
+      ],
+      "label": "Text",
+      "content": "Fue imprimado el presente Quaderno de"
+    },
+    {
+      "id": "b23",
+      "bbox": [
+        269,
+        1704,
+        1099,
+        1939
+      ],
+      "label": "Text",
+      "content": "Alcaualas en Salamáca por Juan de Junta Impressor de libros. Acabose a quinze dias del mes de Enero. Año de mil et quinientos y quarenta y siete Años."
+    },
+    {
+      "id": "b24",
+      "bbox": [
+        646,
+        1945,
+        711,
+        2010
+      ],
+      "label": "Picture",
+      "content": "[Picture]"
+    },
+    {
+      "id": "b25",
+      "bbox": [
+        17,
+        2105,
+        335,
+        2133
+      ],
+      "label": "Page-footer",
+      "content": "(c) 2007 Ministerio de Cultura"
+    }
+  ]
+}

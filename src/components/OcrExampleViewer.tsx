@@ -20,8 +20,13 @@ type OcrData = {
 const COLOR_BY_LABEL: Record<string, { fill: string; stroke: string }> = {
   "Page-header": { fill: "rgba(255, 193, 7, 0.18)", stroke: "#f59e0b" },
   "Section-header": { fill: "rgba(244, 63, 94, 0.16)", stroke: "#f43f5e" },
+  Title: { fill: "rgba(217, 70, 239, 0.16)", stroke: "#d946ef" },
   Text: { fill: "rgba(59, 130, 246, 0.14)", stroke: "#3b82f6" },
   "List-item": { fill: "rgba(16, 185, 129, 0.14)", stroke: "#10b981" },
+  Footnote: { fill: "rgba(139, 92, 246, 0.16)", stroke: "#8b5cf6" },
+  Picture: { fill: "rgba(236, 72, 153, 0.16)", stroke: "#ec4899" },
+  Figure: { fill: "rgba(236, 72, 153, 0.16)", stroke: "#ec4899" },
+  Illustration: { fill: "rgba(236, 72, 153, 0.16)", stroke: "#ec4899" },
   "Page-footer": { fill: "rgba(148, 163, 184, 0.18)", stroke: "#94a3b8" },
   default: { fill: "rgba(128, 128, 128, 0.14)", stroke: "#808080" },
 };
