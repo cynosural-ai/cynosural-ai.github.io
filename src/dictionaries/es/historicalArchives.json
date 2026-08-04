@@ -1,0 +1,33 @@
+{
+  "scrollAriaLabel": "Desplazarse a los ejemplos",
+  "initiative": {
+    "badge": "Iniciativa actual",
+    "title": "Archivos históricos mas accesibles",
+    "p1": "Bibliotecas y museos albergan amplias colecciones de documentos digitalizados que se pueden buscar por metadatos, pero no por su contenido. Estamos trabajando para cambiarlo aplicando modelos OCR de última generación que extraen el texto completo de estos archivos, abriéndolos a la investigación, la exploración y el entrenamiento de modelos de IA.",
+    "p2": "Nuestra primera publicación abarca más de 830.000 páginas de la Biblioteca Nacional de España, procedentes de publicaciones del siglo XIX sobre ciencia, medicina, literatura y más. A continuación, planeamos expandirnos a otros archivos de toda España.",
+    "datasetTitle": "Dataset OCR de la Hemeroteca BNE"
+  },
+  "stats": {
+    "pages": "Páginas",
+    "tokens": "Tokens",
+    "collections": "Colecciones"
+  },
+  "actions": {
+    "dataset": "Dataset",
+    "code": "Código",
+    "datasetAriaLabel": "hugging face"
+  },
+  "alt": "Collage de periódicos históricos",
+  "imageSourcePrefix": "Imagen de la",
+  "imageSource": "Biblioteca Virtual del Patrimonio Bibliográfico",
+  "viewer": {
+    "extractedText": "Texto extraído",
+    "regions": "regiones",
+    "imgAlt": "Página de documento histórico con regiones OCR"
+  },
+  "examples": [
+    { "label": "#1", "src": "/historical-archives/le_0011.json" },
+    { "label": "#2", "src": "/historical-archives/co_0079.json" },
+    { "label": "#3", "src": "/historical-archives/img_0317.json" }
+  ]
+}

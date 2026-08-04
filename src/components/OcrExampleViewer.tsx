@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/i18n/LocaleProvider";
 
 type Block = {
   id: string;
@@ -38,6 +39,7 @@ function colorsFor(label: string) {
 }
 
 export default function OcrExampleViewer({ data }: { data: OcrData }) {
+  const t = useTranslation("historicalArchives");
   const [hovered, setHovered] = useState<number | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
   const listRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -53,15 +55,15 @@ export default function OcrExampleViewer({ data }: { data: OcrData }) {
   const uniqueLabels = Array.from(new Set(data.blocks.map((b) => b.label)));
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+    <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm max-h-[70vh] flex flex-col">
+      <div className="grid grid-cols-1 lg:grid-cols-2 flex-1 min-h-0">
         {/* Image + SVG overlay */}
-        <div className="relative bg-gray-100 border-b lg:border-b-0 lg:border-r border-gray-200">
+        <div className="relative bg-gray-100 border-b lg:border-b-0 lg:border-r border-gray-200 overflow-y-auto">
           <div className="relative w-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={data.image}
-              alt="Historical document page with OCR regions"
+              alt={t.viewer.imgAlt}
               className="block w-full h-auto select-none"
               draggable={false}
             />
@@ -115,10 +117,10 @@ export default function OcrExampleViewer({ data }: { data: OcrData }) {
         </div>
 
         {/* Text panel */}
-        <div className="flex flex-col max-h-[640px] lg:max-h-[720px]">
+        <div className="flex flex-col min-h-0">
           <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
-            <h3 className="text-sm font-semibold text-gray-900">Extracted text</h3>
-            <span className="text-xs text-gray-400">{data.blocks.length} regions</span>
+            <h3 className="text-sm font-semibold text-gray-900">{t.viewer.extractedText}</h3>
+            <span className="text-xs text-gray-400">{data.blocks.length} {t.viewer.regions}</span>
           </div>
           <div className="flex-1 overflow-y-auto divide-y divide-gray-100">
             {data.blocks.map((block, i) => {

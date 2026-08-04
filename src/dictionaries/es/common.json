@@ -1,0 +1,11 @@
+{
+  "metadata": {
+    "title": "Cynosural AI Lab",
+    "description": "Organización sin ánimo de lucro dedicada a la investigación y desarrollo en IA."
+  },
+  "srOnly": {
+    "openMenu": "Abrir menú principal"
+  },
+  "loadingExample": "Cargando ejemplo…",
+  "errorExample": "No se pudo cargar el ejemplo."
+}
