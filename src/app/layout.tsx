@@ -33,11 +33,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${jost.variable}`}>
         <LocaleProvider>
-          <div className="flex flex-col min-h-screen">
+          {/* dvh (dynamic viewport height) instead of vh so on mobile the layout
+              uses the actually-visible area, accounting for the browser's address
+              bar. Without this the footer sits behind the address bar and needs a
+              scroll to reveal. Desktop behavior is unchanged. */}
+          <div className="flex flex-col min-h-dvh">
             <Navbar />
             {/* main is a flex column so the home hero can flex-grow to fill the
                 viewport between navbar and footer without overflowing. Pages
-                with more content scroll normally thanks to min-h-screen above. */}
+                with more content scroll normally thanks to min-h-dvh above. */}
             <main className="flex-grow flex flex-col min-h-0">{children}</main>
             <Footer />
           </div>
