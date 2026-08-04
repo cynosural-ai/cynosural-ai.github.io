@@ -1,0 +1,22 @@
+{
+  "title": "Our Projects",
+  "intro": "Exploring the frontiers of AI with a focus on utility, safety, and accessibility.",
+  "learnMore": "Learn more",
+  "projects": [
+    {
+      "title": "Project Alpha",
+      "description": "An open-source initiative to improve natural language understanding in low-resource languages.",
+      "tags": ["NLP", "Open Source", "Research"]
+    },
+    {
+      "title": "Vision for Good",
+      "description": "Computer vision models designed to assist in environmental monitoring and wildlife conservation.",
+      "tags": ["Computer Vision", "Environment", "AI"]
+    },
+    {
+      "title": "Ethics First",
+      "description": "A comprehensive framework and toolkit for evaluating bias in machine learning datasets.",
+      "tags": ["Ethics", "Tooling", "Safety"]
+    }
+  ]
+}

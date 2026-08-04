@@ -1,0 +1,22 @@
+{
+  "title": "Nuestros proyectos",
+  "intro": "Exploramos las fronteras de la IA con foco en utilidad, seguridad y accesibilidad.",
+  "learnMore": "Saber más",
+  "projects": [
+    {
+      "title": "Project Alpha",
+      "description": "Una iniciativa de código abierto para mejorar la comprensión del lenguaje natural en lenguas con pocos recursos.",
+      "tags": ["NLP", "Código abierto", "Investigación"]
+    },
+    {
+      "title": "Vision for Good",
+      "description": "Modelos de visión por computador diseñados para asistir en la monitorización medioambiental y la conservación de la vida silvestre.",
+      "tags": ["Visión por computador", "Medioambiente", "IA"]
+    },
+    {
+      "title": "Ethics First",
+      "description": "Un marco de trabajo y un conjunto de herramientas para evaluar el sesgo en datasets de aprendizaje automático.",
+      "tags": ["Ética", "Herramientas", "Seguridad"]
+    }
+  ]
+}

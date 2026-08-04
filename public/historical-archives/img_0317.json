@@ -1,0 +1,139 @@
+{
+  "image": "/historical-archives/img_0317.jpg",
+  "width": 1100,
+  "height": 1647,
+  "blocks": [
+    {
+      "id": "b0",
+      "bbox": [
+        496,
+        59,
+        538,
+        82
+      ],
+      "label": "Page-header",
+      "content": "277"
+    },
+    {
+      "id": "b1",
+      "bbox": [
+        109,
+        94,
+        916,
+        158
+      ],
+      "label": "Text",
+      "content": "nuevo régimen municipal, levantó á sus costas una compañía de dragones, de la que fué capitan, y murió en 19 de mayo de 1766."
+    },
+    {
+      "id": "b2",
+      "bbox": [
+        109,
+        158,
+        923,
+        284
+      ],
+      "label": "Text",
+      "content": "Don Miguel María Brondo y Puigdorfila fué caballero de la ínclita y militar órden de San Juan de Jerusalen, y capitan de la antigua milicia urbana de Mallorca. Su hijo Don Nicolás Brondo y Zaforteza es el actual poseedor de los vínculos y mayorazgos de su casa."
+    },
+    {
+      "id": "b3",
+      "bbox": [
+        109,
+        284,
+        920,
+        372
+      ],
+      "label": "Text",
+      "content": "Armas: cuatro bandas ondeadas, de las que los heraldos llaman veros, de color encarnado, en campo de oro, con el lema *Eo quod ore sine labiis nasceretur*."
+    },
+    {
+      "id": "b4",
+      "bbox": [
+        109,
+        378,
+        921,
+        475
+      ],
+      "label": "Text",
+      "content": "1486. **Sitjar.** Familia solariega de las Islas Baleares, cuyo antiguo solar fué en la villa de Porreras, donde sus ilustres hijos ocuparon con frecuencia los principales oficios municipales en los siglos XIV y XV."
+    },
+    {
+      "id": "b5",
+      "bbox": [
+        109,
+        475,
+        924,
+        694
+      ],
+      "label": "Text",
+      "content": "El P. Fr. Pedro Sitjar, religioso mercedario, fué gran teólogo, escelente jurista y muy versado en las letras divinas y humanas. Fué comendador del convento de San Lázaro de Zaragoza: su religion le debió la defensa de su instituto, contra la errada doctrina de los arbitristas, sobre que el Papa no podia hacer las concesiones que habia hecho á los mercedarios. Leyó cátedra de teología en el convento de Leon de Francia; fué vicario general de Roma; escribió doctamente, y murió á principios del siglo XVI."
+    },
+    {
+      "id": "b6",
+      "bbox": [
+        109,
+        694,
+        926,
+        853
+      ],
+      "label": "Text",
+      "content": "Una rama de esta familia trasladó su casa á Palma á mediados del siglo pasado, siendo el actual representante de ella Don Jaime Sitjar y Cortey, que en 1848 fué alcalde de segundo voto de Palma de Mallorca. Tiene dos hermanos: Don Antonio y Don Andrés; este, licenciado en jurisprudencia é individuo de varias corporaciones literarias; el primero, capitan de infantería."
+    },
+    {
+      "id": "b7",
+      "bbox": [
+        109,
+        853,
+        929,
+        917
+      ],
+      "label": "Text",
+      "content": "Armas: una aspa azul, y en cada uno de sus cuatro ángulos una estrella del mismo color, en campo de plata."
+    },
+    {
+      "id": "b8",
+      "bbox": [
+        109,
+        917,
+        932,
+        1201
+      ],
+      "label": "Text",
+      "content": "1487. **Siquier** ¹. Noble linage de Cataluña, Navarra, Valencia é Islas Baleares, cuya antigüedad se oculta en la sucesion de los siglos. La rama de las Islas Baleares reconoce por tronco á Pedro Siquier, natural de Navarra, que en el siglo XIV pasó á establecerse en la referida isla ², y su descendencia ya á mediados del siglo XV poseia pingües heredades en el lugar de Buger. De aquí pasó esta familia á domiciliarse en Inca; y en el año 1540 adquirió y amayorazgó la vasta posesion de *Binisati*, de la cual se hicieron despues varias subdivisiones, quedando con la parte principal esta familia, poseyéndola en el dia. Tanto los Siquier de Buger como sus descendientes los de Inca."
+    },
+    {
+      "id": "b9",
+      "bbox": [
+        140,
+        1254,
+        931,
+        1280
+      ],
+      "label": "Footnote",
+      "content": "¹ Se halla escrito *Siquier, Siqués y Xiqués*, particularmente en el principado de Cataluña."
+    },
+    {
+      "id": "b10",
+      "bbox": [
+        122,
+        1279,
+        933,
+        1329
+      ],
+      "label": "Footnote",
+      "content": "² Consta por real despacho de nobleza y armas dado en Madrid á 13 de julio de 1652, por Gerónimo de Villa, cronista y rey de armas de S. M. C."
+    },
+    {
+      "id": "b11",
+      "bbox": [
+        14,
+        1610,
+        127,
+        1629
+      ],
+      "label": "Page-footer",
+      "content": "M.E.C.D. 2017"
+    }
+  ]
+}

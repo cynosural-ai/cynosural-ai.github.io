@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "github": "GitHub",
+    "huggingFace": "Hugging Face"
+  },
+  "langToggle": {
+    "selectLanguage": "Seleccionar idioma"
+  }
+}

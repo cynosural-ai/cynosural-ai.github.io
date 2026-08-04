@@ -1,0 +1,33 @@
+{
+  "scrollAriaLabel": "Scroll to examples",
+  "initiative": {
+    "badge": "Current Initiative",
+    "title": "Opening Historical Archives",
+    "p1": "Libraries and museums contain vast collections of scanned documents that are searchable by metadata but not by content. We are working on changing that by applying state-of-the-art OCR models to extract the full text from these archives, opening them up for research, exploration, and AI training.",
+    "p2": "Our first release covers over 830,000 pages from the Biblioteca Nacional de España, drawn from 19th-century publications in science, medicine, literature, and more. Next, we plan to expand to other archives across Spain.",
+    "datasetTitle": "BNE Hemeroteca OCR Dataset"
+  },
+  "stats": {
+    "pages": "Pages",
+    "tokens": "Tokens",
+    "collections": "Collections"
+  },
+  "actions": {
+    "dataset": "Dataset",
+    "code": "Code",
+    "datasetAriaLabel": "hugging face"
+  },
+  "alt": "Historical Newspaper Collage",
+  "imageSourcePrefix": "Image from",
+  "imageSource": "Biblioteca Virtual del Patrimonio Bibliográfico",
+  "viewer": {
+    "extractedText": "Extracted text",
+    "regions": "regions",
+    "imgAlt": "Historical document page with OCR regions"
+  },
+  "examples": [
+    { "label": "#1", "src": "/historical-archives/le_0011.json" },
+    { "label": "#2", "src": "/historical-archives/co_0079.json" },
+    { "label": "#3", "src": "/historical-archives/img_0317.json" }
+  ]
+}

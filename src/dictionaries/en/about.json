@@ -1,0 +1,19 @@
+{
+  "title": "About",
+  "intro": "We are an independent AI research lab based in Madrid, Spain. Our work focuses on the development of open AI research projects that have a positive impact on society. We are currently focused on making Spanish historical archives more accessible.",
+  "vision": {
+    "heading": "Our Vision",
+    "body": "We believe the best way to advance AI research is through openness. By releasing datasets, models, and code as open-source, people can use them, improve them, and push the field forward together."
+  },
+  "goals": {
+    "heading": "Our Goals",
+    "items": [
+      "Contribute to AI research through open datasets, tools, and models that serve the public good",
+      "Contribute to Spain's growing role in the global AI landscape"
+    ]
+  },
+  "funding": {
+    "heading": "Funding",
+    "body": "We are currently self-funded, using our own resources to bootstrap this initiative."
+  }
+}
