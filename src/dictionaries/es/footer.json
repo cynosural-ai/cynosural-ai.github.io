@@ -1,12 +1,9 @@
 {
-  "copyright": "Investigación de código abierto.",
   "resources": {
-    "heading": "Recursos",
     "github": "GitHub",
     "huggingFace": "Hugging Face"
   },
-  "learnMore": {
-    "heading": "Saber más",
-    "about": "Acerca de"
+  "langToggle": {
+    "selectLanguage": "Seleccionar idioma"
   }
 }

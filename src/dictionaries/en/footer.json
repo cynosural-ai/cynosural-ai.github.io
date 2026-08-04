@@ -1,12 +1,9 @@
 {
-  "copyright": "Open Source Research.",
   "resources": {
-    "heading": "Resources",
     "github": "GitHub",
     "huggingFace": "Hugging Face"
   },
-  "learnMore": {
-    "heading": "Learn More",
-    "about": "About"
+  "langToggle": {
+    "selectLanguage": "Select language"
   }
 }

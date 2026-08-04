@@ -1,28 +1,33 @@
 {
-  "title": "Historical Archives",
-  "intro": "Spain's libraries and archives hold vast collections of scanned historical documents that are searchable by metadata, but not by what they actually say. We apply OCR to extract the full text and make these collections explorable by content. The examples below show pages from across the output — each region is detected automatically, and the extracted text appears beside it.",
-  "captionPrefix": "Hover or tap a region to highlight its text",
-  "bneLink": "Biblioteca Nacional de España",
+  "scrollAriaLabel": "Scroll to examples",
+  "initiative": {
+    "badge": "Current Initiative",
+    "title": "Opening Historical Archives",
+    "p1": "Libraries and museums contain vast collections of scanned documents that are searchable by metadata but not by content. We are working on changing that by applying state-of-the-art OCR models to extract the full text from these archives, opening them up for research, exploration, and AI training.",
+    "p2": "Our first release covers over 830,000 pages from the Biblioteca Nacional de España, drawn from 19th-century publications in science, medicine, literature, and more. Next, we plan to expand to other archives across Spain.",
+    "datasetTitle": "BNE Hemeroteca OCR Dataset"
+  },
+  "stats": {
+    "pages": "Pages",
+    "tokens": "Tokens",
+    "collections": "Collections"
+  },
+  "actions": {
+    "dataset": "Dataset",
+    "code": "Code",
+    "datasetAriaLabel": "hugging face"
+  },
+  "alt": "Historical Newspaper Collage",
+  "imageSourcePrefix": "Image from",
+  "imageSource": "Biblioteca Virtual del Patrimonio Bibliográfico",
   "viewer": {
     "extractedText": "Extracted text",
     "regions": "regions",
     "imgAlt": "Historical document page with OCR regions"
   },
   "examples": [
-    {
-      "label": "Table of contents",
-      "caption": "Table of contents from an early 19th-century publication. Headers, list entries, and page numbers detected as distinct region types.",
-      "src": "/historical-archives/le_0011.json"
-    },
-    {
-      "label": "Legal text (16th c.)",
-      "caption": "A 16th-century tax-law page in archaic Spanish — note spellings like \u201calcaualas\u201d and \u201couieren\u201d. Dense two-column prose.",
-      "src": "/historical-archives/co_0079.json"
-    },
-    {
-      "label": "Heraldic encyclopedia",
-      "caption": "An article from a noble-lineage encyclopedia, with structured Text regions plus Footnote regions detected separately.",
-      "src": "/historical-archives/img_0317.json"
-    }
+    { "label": "#1", "src": "/historical-archives/le_0011.json" },
+    { "label": "#2", "src": "/historical-archives/co_0079.json" },
+    { "label": "#3", "src": "/historical-archives/img_0317.json" }
   ]
 }

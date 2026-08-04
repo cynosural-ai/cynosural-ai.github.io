@@ -1,28 +1,33 @@
 {
-  "title": "Archivos Históricos",
-  "intro": "Las bibliotecas y archivos de España albergan amplias colecciones de documentos históricos digitalizados que se pueden buscar por metadatos, pero no por lo que realmente dicen. Aplicamos OCR para extraer el texto completo y hacer que estas colecciones sean explorables por su contenido. Los ejemplos siguientes muestran páginas representativas del resultado: cada región se detecta de forma automática y el texto extraído aparece a su lado.",
-  "captionPrefix": "Pasa el cursor o toca una región para resaltar su texto",
-  "bneLink": "Biblioteca Nacional de España",
+  "scrollAriaLabel": "Desplazarse a los ejemplos",
+  "initiative": {
+    "badge": "Iniciativa actual",
+    "title": "Archivos históricos mas accesibles",
+    "p1": "Bibliotecas y museos albergan amplias colecciones de documentos digitalizados que se pueden buscar por metadatos, pero no por su contenido. Estamos trabajando para cambiarlo aplicando modelos OCR de última generación que extraen el texto completo de estos archivos, abriéndolos a la investigación, la exploración y el entrenamiento de modelos de IA.",
+    "p2": "Nuestra primera publicación abarca más de 830.000 páginas de la Biblioteca Nacional de España, procedentes de publicaciones del siglo XIX sobre ciencia, medicina, literatura y más. A continuación, planeamos expandirnos a otros archivos de toda España.",
+    "datasetTitle": "Dataset OCR de la Hemeroteca BNE"
+  },
+  "stats": {
+    "pages": "Páginas",
+    "tokens": "Tokens",
+    "collections": "Colecciones"
+  },
+  "actions": {
+    "dataset": "Dataset",
+    "code": "Código",
+    "datasetAriaLabel": "hugging face"
+  },
+  "alt": "Collage de periódicos históricos",
+  "imageSourcePrefix": "Imagen de la",
+  "imageSource": "Biblioteca Virtual del Patrimonio Bibliográfico",
   "viewer": {
     "extractedText": "Texto extraído",
     "regions": "regiones",
     "imgAlt": "Página de documento histórico con regiones OCR"
   },
   "examples": [
-    {
-      "label": "Índice",
-      "caption": "Índice de una publicación de principios del siglo XIX. Encabezados, entradas de lista y números de página se detectan como tipos de región distintos.",
-      "src": "/historical-archives/le_0011.json"
-    },
-    {
-      "label": "Texto legal (s. XVI)",
-      "caption": "Una página de legislación fiscal del siglo XVI en español arcaico — nótese grafías como \u201calcaualas\u201d y \u201couieren\u201d. Prosa densa a dos columnas.",
-      "src": "/historical-archives/co_0079.json"
-    },
-    {
-      "label": "Enciclopedia heráldica",
-      "caption": "Un artículo de una enciclopedia de linajes nobiliarios, con regiones de Texto estructuradas además de regiones de Nota al pie detectadas por separado.",
-      "src": "/historical-archives/img_0317.json"
-    }
+    { "label": "#1", "src": "/historical-archives/le_0011.json" },
+    { "label": "#2", "src": "/historical-archives/co_0079.json" },
+    { "label": "#3", "src": "/historical-archives/img_0317.json" }
   ]
 }

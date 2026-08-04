@@ -1,26 +1,6 @@
 {
   "hero": {
-    "titleLead": "AI research for",
-    "titleHighlight": "public benefit",
-    "subtitle": "Open source · From Spain",
-    "scrollAriaLabel": "Scroll to content"
-  },
-  "initiative": {
-    "badge": "Current Initiative",
-    "title": "Opening Historical Archives",
-    "p1": "Libraries and museums contain vast collections of scanned documents that are searchable by metadata but not by content. We are working on changing that by applying state-of-the-art OCR models to extract the full text from these archives, opening them up for research, exploration, and AI training.",
-    "p2": "Our first release covers over 830,000 pages from the Biblioteca Nacional de España, drawn from 19th-century publications in science, medicine, literature, and more. Next, we plan to expand to other archives across Spain.",
-    "datasetTitle": "BNE Hemeroteca OCR Dataset"
-  },
-  "stats": {
-    "pages": "Pages",
-    "tokens": "Tokens",
-    "collections": "Collections"
-  },
-  "actions": {
-    "dataset": "Dataset",
-    "code": "Code",
-    "datasetAriaLabel": "hugging face"
-  },
-  "alt": "Historical Newspaper Collage"
+    "title": "Cynosural",
+    "subtitle": "AI Research from Spain"
+  }
 }

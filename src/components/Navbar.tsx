@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
-import { useTranslation, useLocale } from "@/i18n/LocaleProvider";
-import { LOCALES, type Locale } from "@/i18n/config";
+import { useTranslation } from "@/i18n/LocaleProvider";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const t = useTranslation("navbar");
-  const { locale, setLocale } = useLocale();
 
   const navigation = [
     { name: t.links.historicalArchives, href: "/historical-archives" },
@@ -18,15 +20,27 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+    <nav className="bg-white sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 flex items-center">
-              <span className="font-jost text-xl text-gray-900 tracking-tight">Cynosural</span>
-            </Link>
-          </div>
+        <div className={clsx("relative flex h-16", isHome ? "justify-center" : "justify-between")}>
+          {/* Brand — hidden on the home page (Sakana-style) */}
+          {!isHome && (
+            <div className="flex items-center">
+              <Link href="/" className="flex-shrink-0 flex items-center gap-2">
+                <Image
+                  src="/cynosural_logo_small.png"
+                  alt="Cynosural"
+                  width={28}
+                  height={28}
+                  className="rounded-full"
+                  priority
+                />
+                <span className="font-jost text-xl text-[#003366] tracking-tight">Cynosural</span>
+              </Link>
+            </div>
+          )}
 
+          {/* Desktop nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
@@ -37,15 +51,16 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <LocaleSwitcher locale={locale} setLocale={setLocale} ariaLabel={t.langToggle.selectLanguage} />
           </div>
 
-          <div className="flex items-center md:hidden">
+          {/* Mobile menu toggle */}
+          <div className="flex items-center md:hidden absolute right-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              aria-label={t.menu.toggle}
+              aria-expanded={isOpen}
             >
-              <span className="sr-only">{t.langToggle.selectLanguage}</span>
               {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
             </button>
           </div>
@@ -65,41 +80,8 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <div className="px-3 py-2">
-            <LocaleSwitcher locale={locale} setLocale={setLocale} ariaLabel={t.langToggle.selectLanguage} />
-          </div>
         </div>
       </div>
     </nav>
-  );
-}
-
-function LocaleSwitcher({
-  locale,
-  setLocale,
-  ariaLabel,
-}: {
-  locale: Locale;
-  setLocale: (locale: Locale) => void;
-  ariaLabel: string;
-}) {
-  return (
-    <div className="flex items-center gap-1 text-xs font-semibold" role="group" aria-label={ariaLabel}>
-      {LOCALES.map((l, i) => (
-        <span key={l} className="flex items-center">
-          <button
-            onClick={() => setLocale(l)}
-            aria-pressed={locale === l}
-            className={clsx(
-              "px-1.5 py-1 rounded transition-colors",
-              locale === l ? "text-[#003366]" : "text-gray-400 hover:text-[#209BD0]"
-            )}
-          >
-            {l.toUpperCase()}
-          </button>
-          {i < LOCALES.length - 1 && <span className="text-gray-300">|</span>}
-        </span>
-      ))}
-    </div>
   );
 }

@@ -35,7 +35,10 @@ export default function RootLayout({
         <LocaleProvider>
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow">{children}</main>
+            {/* main is a flex column so the home hero can flex-grow to fill the
+                viewport between navbar and footer without overflowing. Pages
+                with more content scroll normally thanks to min-h-screen above. */}
+            <main className="flex-grow flex flex-col min-h-0">{children}</main>
             <Footer />
           </div>
         </LocaleProvider>

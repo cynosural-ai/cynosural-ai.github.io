@@ -55,10 +55,10 @@ export default function OcrExampleViewer({ data }: { data: OcrData }) {
   const uniqueLabels = Array.from(new Set(data.blocks.map((b) => b.label)));
 
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+    <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm max-h-[70vh] flex flex-col">
+      <div className="grid grid-cols-1 lg:grid-cols-2 flex-1 min-h-0">
         {/* Image + SVG overlay */}
-        <div className="relative bg-gray-100 border-b lg:border-b-0 lg:border-r border-gray-200">
+        <div className="relative bg-gray-100 border-b lg:border-b-0 lg:border-r border-gray-200 overflow-y-auto">
           <div className="relative w-full">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -117,7 +117,7 @@ export default function OcrExampleViewer({ data }: { data: OcrData }) {
         </div>
 
         {/* Text panel */}
-        <div className="flex flex-col max-h-[640px] lg:max-h-[720px]">
+        <div className="flex flex-col min-h-0">
           <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200">
             <h3 className="text-sm font-semibold text-gray-900">{t.viewer.extractedText}</h3>
             <span className="text-xs text-gray-400">{data.blocks.length} {t.viewer.regions}</span>

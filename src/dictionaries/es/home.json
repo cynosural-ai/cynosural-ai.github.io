@@ -1,26 +1,6 @@
 {
   "hero": {
-    "titleLead": "Investigación en IA para el",
-    "titleHighlight": "bien público",
-    "subtitle": "Código abierto · Desde España",
-    "scrollAriaLabel": "Desplazarse al contenido"
-  },
-  "initiative": {
-    "badge": "Iniciativa actual",
-    "title": "Abriendo los archivos históricos",
-    "p1": "Bibliotecas y museos albergan amplias colecciones de documentos digitalizados que se pueden buscar por metadatos, pero no por su contenido. Estamos trabajando para cambiarlo aplicando modelos OCR de última generación que extraen el texto completo de estos archivos, abriéndolos a la investigación, la exploración y el entrenamiento de modelos de IA.",
-    "p2": "Nuestra primera publicación abarca más de 830.000 páginas de la Biblioteca Nacional de España, procedentes de publicaciones del siglo XIX sobre ciencia, medicina, literatura y más. A continuación, planeamos expandirnos a otros archivos de toda España.",
-    "datasetTitle": "Dataset OCR de la Hemeroteca BNE"
-  },
-  "stats": {
-    "pages": "Páginas",
-    "tokens": "Tokens",
-    "collections": "Colecciones"
-  },
-  "actions": {
-    "dataset": "Dataset",
-    "code": "Código",
-    "datasetAriaLabel": "hugging face"
-  },
-  "alt": "Collage de periódicos históricos"
+    "title": "Cynosural",
+    "subtitle": "Investigación en IA desde España"
+  }
 }
