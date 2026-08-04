@@ -22,25 +22,13 @@ export default function Navbar() {
   return (
     <nav className="bg-white sticky top-0 z-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={clsx("relative flex h-16", isHome ? "justify-center" : "justify-between")}>
-          {/* Brand — hidden on the home page (Sakana-style) */}
-          {!isHome && (
-            <div className="flex items-center">
-              <Link href="/" className="flex-shrink-0 flex items-center gap-2">
-                <Image
-                  src="/cynosural_logo_small.png"
-                  alt="Cynosural"
-                  width={28}
-                  height={28}
-                  className="rounded-full"
-                  priority
-                />
-                <span className="font-jost text-xl text-[#003366] tracking-tight">Cynosural</span>
-              </Link>
-            </div>
-          )}
-
-          {/* Desktop nav */}
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <span className="font-jost text-xl text-gray-900 tracking-tight">Cynosural</span>
+            </Link>
+          </div>
+          
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
