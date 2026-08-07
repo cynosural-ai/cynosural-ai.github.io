@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslation } from "@/i18n/LocaleProvider";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 
@@ -19,17 +20,19 @@ export default function Footer() {
               href="https://github.com/cynosural-ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-gray-500 hover:text-[#209BD0] transition-colors"
+              className="text-gray-900"
+              aria-label={t.resources.github}
             >
-              {t.resources.github}
+              <Image src="/github.svg" alt="" width={14} height={14} className="flex-shrink-0" />
             </a>
             <a
               href="https://huggingface.co/cynosural"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-gray-500 hover:text-[#209BD0] transition-colors"
+              className="text-sm leading-none"
+              aria-label={t.resources.huggingFace}
             >
-              {t.resources.huggingFace}
+              <span role="img" aria-label={t.resources.huggingFace}>🤗</span>
             </a>
             <LocaleSwitcher ariaLabel={t.langToggle.selectLanguage} />
           </div>
