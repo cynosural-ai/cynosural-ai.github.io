@@ -18,14 +18,14 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="max-w-4xl"
       >
-        <h1 className="flex items-center justify-center gap-4 text-5xl md:text-7xl font-jost tracking-tight leading-[1.2] text-[#003366] mb-8">
+        <h1 className="flex items-center justify-center gap-5 text-5xl md:text-7xl font-jost tracking-tight leading-[1.2] text-[#147ca6] mb-8">
           {t.hero.title}
           <Image
-            src="/cynosural_logo_small.png"
+            src="/blue.svg"
             alt=""
             width={72}
             height={72}
-            className="w-12 h-12 md:w-20 md:h-20"
+            className="w-14 h-14 md:w-20 md:h-20"
           />
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">

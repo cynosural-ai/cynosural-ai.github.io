@@ -1,0 +1,46 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1001 1417" width="1001" height="1417">
+  <defs>
+    <radialGradient
+      id="logo-gradient"
+      gradientUnits="userSpaceOnUse"
+      cx="502.63"
+      cy="671.22"
+      fx="502.63"
+      fy="671.22"
+      r="900"
+      spreadMethod="pad"
+    >
+      <stop offset="0" stop-color="#72b9d5" />
+      <stop offset="0.33" stop-color="#147ca6" />
+      <stop offset="0.64" stop-color="#0e6094" />
+      <stop offset="0.86" stop-color="#074b7f" />
+      <stop offset="1" stop-color="#013568" />
+    </radialGradient>
+
+    <style>
+      .s0 {
+        fill: #ffffff;
+        stroke: #ffffff;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+
+  <g id="Layer_1">
+    <rect x="0" y="0" width="1001" height="1417" fill="url(#logo-gradient)" />
+
+    <path
+      id="Shape_3_copy_4"
+      fill-rule="evenodd"
+      class="s0"
+      d="m502.63 1112.13c-240.44 0-434.8-197.1-434.8-440.91 0-133.41 58.18-252.82 150.27-333.62-72.51 72.66-117.29 172.99-117.29 283.95 0 222.21 179.61 401.83 401.82 401.83 222.22 0 401.83-179.62 401.83-401.83 0-110.96-44.78-211.29-117.29-283.95 92.09 80.8 150.27 200.21 150.27 333.62 0 243.81-194.36 440.91-434.81 440.91z"
+    />
+
+    <path
+      id="Shape_1"
+      fill-rule="evenodd"
+      class="s0"
+      d="m432.32 600.51l-128.57 69.6 129.69 68.8 69.13 128.73 70.56-129.05 129.22-68.95-129.71-69.28-69.99-268.99z"
+    />
+  </g>
+</svg>

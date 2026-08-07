@@ -60,7 +60,7 @@ export default function HistoricalArchives() {
   return (
     <div className="bg-white min-h-screen">
       {/* Main Initiative Section */}
-      <section id="main-initiative" className="w-full min-h-[calc(100vh-64px)] bg-gradient-to-br from-[#003366] to-[#002244] text-white relative flex flex-col">
+      <section id="main-initiative" className="w-full min-h-[calc(100vh-64px)] bg-gradient-to-br from-[#147ca6] to-[#0a4d6a] text-white relative flex flex-col">
         <div className="flex flex-col md:flex-row flex-grow">
 
           {/* Left Column: Image Collage (40% width on desktop) */}
@@ -84,10 +84,6 @@ export default function HistoricalArchives() {
               transition={{ duration: 0.5 }}
               className="max-w-2xl"
             >
-              <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-200 uppercase bg-blue-900/30 rounded-full border border-blue-500/30">
-                {t.initiative.badge}
-              </div>
-
               <h2 className="text-3xl md:text-4xl font-bold font-jost mb-6 text-white">
                 {t.initiative.title}
               </h2>
@@ -175,7 +171,7 @@ export default function HistoricalArchives() {
               onClick={() => setActive(i)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 active === i
-                  ? "bg-[#003366] text-white"
+                  ? "bg-[#147ca6] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
