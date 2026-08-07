@@ -28,14 +28,13 @@ export default function Navbar() {
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0 flex items-center gap-2">
                 <Image
-                  src="/cynosural_logo_small.png"
+                  src="/blue.svg"
                   alt="Cynosural"
                   width={28}
                   height={28}
-                  className="rounded-full"
                   priority
                 />
-                <span className="font-jost text-xl text-[#003366] tracking-tight">Cynosural</span>
+                <span className="font-jost text-xl text-[#147ca6] tracking-tight">Cynosural</span>
               </Link>
             </div>
           )}
