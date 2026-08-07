@@ -25,7 +25,7 @@ export default function Home() {
             alt=""
             width={72}
             height={72}
-            className="w-12 h-12 md:w-20 md:h-20"
+            className="w-16 h-16 md:w-24 md:h-24"
           />
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
