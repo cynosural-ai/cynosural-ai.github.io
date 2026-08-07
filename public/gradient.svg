@@ -1,12 +1,12 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1001 1417" width="1001" height="1417">
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="-248 -28 1500 1500" width="1500" height="1500">
   <defs>
     <radialGradient
       id="logo-gradient"
       gradientUnits="userSpaceOnUse"
       cx="502.63"
-      cy="671.22"
+      cy="721.75"
       fx="502.63"
-      fy="671.22"
+      fy="721.75"
       r="900"
       spreadMethod="pad"
     >
@@ -27,7 +27,7 @@
   </defs>
 
   <g id="Layer_1">
-    <rect x="0" y="0" width="1001" height="1417" fill="url(#logo-gradient)" />
+    <rect x="-248" y="-28" width="1500" height="1500" fill="url(#logo-gradient)" />
 
     <path
       id="Shape_3_copy_4"
