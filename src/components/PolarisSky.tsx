@@ -11,6 +11,7 @@ type Star = {
   twinkleSpeed: number;
   phase: number;
   blue: boolean;
+  special: boolean;
 };
 
 type Comet = {
@@ -23,7 +24,8 @@ type Comet = {
 
 /**
  * Lightweight canvas starfield for the home hero:
- * - twinkling stars with depth-based mouse parallax
+ * - twinkling stars with depth-based mouse parallax, one of them brighter
+ *   and bigger than the rest
  * - periodic shooting stars crossing the sky on random trajectories
  * - `prefers-reduced-motion` falls back to a static, single-frame render
  */
@@ -60,16 +62,23 @@ export default function PolarisSky() {
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const count = Math.max(90, Math.min(280, Math.round((width * height) / 8000)));
-      stars = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        z: Math.random(),
-        r: 0.4 + Math.random() * 1.4,
-        baseAlpha: 0.2 + Math.random() * 0.65,
-        twinkleSpeed: 0.4 + Math.random() * 1.8,
-        phase: Math.random() * Math.PI * 2,
-        blue: Math.random() < 0.3,
-      }));
+      stars = Array.from({ length: count }, (_, i) => {
+        const special = i === 0;
+        return {
+          // The standout star sits 10% right of center, a quarter from the top;
+          // it keeps mouse parallax (pinned depth for a consistent drift).
+          x: special ? width * 0.6 : Math.random() * width,
+          y: special ? height * 0.25 : Math.random() * height,
+          z: special ? 0.5 : Math.random(),
+          // The standout star is bigger and brighter than the rest
+          r: special ? 2.6 : 0.4 + Math.random() * 1.4,
+          baseAlpha: special ? 1 : 0.2 + Math.random() * 0.65,
+          twinkleSpeed: special ? 0.8 : 0.4 + Math.random() * 1.8,
+          phase: Math.random() * Math.PI * 2,
+          blue: Math.random() < 0.3,
+          special,
+        };
+      });
     };
 
     const spawnComet = () => {
@@ -120,6 +129,16 @@ export default function PolarisSky() {
           : s.baseAlpha * (0.55 + 0.45 * Math.sin(t * s.twinkleSpeed + s.phase));
         ctx.globalAlpha = Math.max(0.04, alpha);
         ctx.fillStyle = s.blue ? "#b9d9f6" : "#ffffff";
+        if (s.special) {
+          const glow = ctx.createRadialGradient(x, y, 0, x, y, 12);
+          glow.addColorStop(0, `rgba(255, 255, 255, ${alpha * 0.5})`);
+          glow.addColorStop(1, "rgba(255, 255, 255, 0)");
+          ctx.fillStyle = glow;
+          ctx.beginPath();
+          ctx.arc(x, y, 12, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = "#ffffff";
+        }
         ctx.beginPath();
         ctx.arc(x, y, s.r, 0, Math.PI * 2);
         ctx.fill();
@@ -152,7 +171,7 @@ export default function PolarisSky() {
         ctx.fill();
         if (comet.x < -120 || comet.x > width + 120 || comet.y < -120 || comet.y > height + 120) {
           comet = null;
-          nextCometAt = now + 4500 + Math.random() * 6500;
+          nextCometAt = now + 8000 + Math.random() * 10000;
         }
       } else if (now > nextCometAt) {
         spawnComet();
@@ -176,7 +195,7 @@ export default function PolarisSky() {
     };
 
     resize();
-    nextCometAt = performance.now() + 2500 + Math.random() * 3500;
+    nextCometAt = performance.now() + 5000 + Math.random() * 5000;
     const ro = new ResizeObserver(onResize);
     if (canvas.parentElement) ro.observe(canvas.parentElement);
     window.addEventListener("mousemove", onMouse, { passive: true });
