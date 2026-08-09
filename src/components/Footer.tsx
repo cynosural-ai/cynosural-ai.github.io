@@ -13,8 +13,7 @@ export default function Footer() {
   return (
     <footer
       className={clsx(
-        "border-t",
-        isHome ? "bg-transparent border-white/10" : "bg-white border-gray-100"
+        isHome ? "bg-transparent" : "bg-white border-t border-gray-100"
       )}
     >
       <div className="max-w-7xl mx-auto px-8 py-4">
