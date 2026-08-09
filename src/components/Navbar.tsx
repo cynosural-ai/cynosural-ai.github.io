@@ -13,6 +13,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isDark = isHome || pathname === "/about";
   const t = useTranslation("navbar");
 
   const navigation = [
@@ -23,8 +24,10 @@ export default function Navbar() {
   return (
     <nav
       className={clsx(
-        "sticky top-0 z-50 border-b",
-        isHome ? "bg-transparent border-transparent" : "bg-white border-gray-100"
+        "border-b z-50",
+        isDark
+          ? "bg-transparent border-transparent"
+          : "bg-white border-gray-100 sticky top-0"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,13 +37,20 @@ export default function Navbar() {
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0 flex items-center gap-2">
                 <Image
-                  src="/blue.svg"
+                  src={isDark ? "/polaris.svg" : "/blue.svg"}
                   alt="Cynosural"
                   width={28}
                   height={28}
                   priority
                 />
-                <span className="font-jost text-xl text-[#147ca6] tracking-tight">Cynosural</span>
+                <span
+                  className={clsx(
+                    "font-jost text-xl tracking-tight",
+                    isDark ? "text-white" : "text-[#147ca6]"
+                  )}
+                >
+                  Cynosural
+                </span>
               </Link>
             </div>
           )}
@@ -53,7 +63,7 @@ export default function Navbar() {
                 href={item.href}
                 className={clsx(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  isHome
+                  isDark
                     ? "text-white/70 hover:text-white"
                     : "text-gray-600 hover:text-[#209BD0]"
                 )}
@@ -69,7 +79,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className={clsx(
                 "inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500",
-                isHome
+                isDark
                   ? "text-white/80 hover:text-white hover:bg-white/10"
                   : "text-gray-400 hover:text-gray-500 hover:bg-gray-100"
               )}
@@ -93,7 +103,7 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className={clsx(
               "fixed inset-0 z-50 md:hidden flex flex-col",
-              isHome
+              isDark
                 ? "bg-[#0a1f3d]/95 backdrop-blur-md"
                 : "bg-white"
             )}
@@ -102,7 +112,7 @@ export default function Navbar() {
               <span
                 className={clsx(
                   "font-jost text-xl tracking-tight",
-                  isHome ? "text-white" : "text-[#147ca6]"
+                  isDark ? "text-white" : "text-[#147ca6]"
                 )}
               >
                 Cynosural
@@ -111,7 +121,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className={clsx(
                   "inline-flex items-center justify-center p-2 rounded-md",
-                  isHome
+                  isDark
                     ? "text-white/80 hover:text-white hover:bg-white/10"
                     : "text-gray-400 hover:text-gray-500 hover:bg-gray-100"
                 )}
@@ -127,7 +137,7 @@ export default function Navbar() {
                   href={item.href}
                   className={clsx(
                     "block px-4 py-3 rounded-md text-xl font-medium",
-                    isHome
+                    isDark
                       ? "text-white/70 hover:text-white hover:bg-white/10"
                       : "text-gray-700 hover:text-[#209BD0] hover:bg-gray-50"
                   )}
