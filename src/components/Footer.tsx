@@ -10,7 +10,7 @@ export default function Footer() {
   const t = useTranslation("footer");
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isDark = isHome || pathname === "/about";
+  const isDark = isHome || pathname === "/about" || pathname === "/historical-archives";
 
   return (
     <footer
@@ -22,7 +22,7 @@ export default function Footer() {
             : "bg-white border-t border-gray-100"
       )}
     >
-      <div className="max-w-7xl mx-auto px-8 py-4">
+      <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-3">
           <p
             className={clsx(

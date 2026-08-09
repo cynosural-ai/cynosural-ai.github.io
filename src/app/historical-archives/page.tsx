@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Github, ArrowDown } from "lucide-react";
 import OcrExampleViewer from "@/components/OcrExampleViewer";
 import { useTranslation } from "@/i18n/LocaleProvider";
@@ -58,27 +57,20 @@ export default function HistoricalArchives() {
   }, [active, examples]);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="min-h-screen">
+      {/* Full-viewport night sky behind everything (transparent navbar/footer) */}
+      <div
+        className="fixed inset-0 -z-10 bg-gradient-to-b from-[#040a16] via-[#0a1f3d] to-[#0d2b4e]"
+        aria-hidden
+      />
       {/* Main Initiative Section */}
-      <section id="main-initiative" className="w-full min-h-[calc(100vh-64px)] bg-gradient-to-br from-[#147ca6] to-[#0a4d6a] text-white relative flex flex-col">
-        <div className="flex flex-col md:flex-row flex-grow">
+      <section id="main-initiative" className="w-full min-h-[calc(100vh-64px)] text-white relative flex flex-col">
+        <div className="max-w-7xl mx-auto px-4 w-full flex-grow flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 md:py-20">
 
-          {/* Left Column: Image Collage (40% width on desktop) */}
-          <div className="w-full md:w-[40%] relative min-h-[300px] md:min-h-auto">
-            <Image
-              src="/collage_bne.jpg"
-              alt={t.alt}
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
-          </div>
-
-          {/* Right Column: Content (60% width on desktop) */}
-          <div className="w-full md:w-[60%] p-8 md:p-16 lg:p-20 flex flex-col justify-center">
+          {/* Left Column: Narrative */}
+          <div className="flex-1 flex flex-col justify-center">
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
@@ -92,12 +84,22 @@ export default function HistoricalArchives() {
                 {t.initiative.p1}
               </p>
 
-              <p className="text-lg text-blue-100 mb-8 leading-relaxed">
+              <p className="text-lg text-blue-100 leading-relaxed">
                 {t.initiative.p2}
               </p>
+            </motion.div>
+          </div>
 
-              {/* Specific Project Card */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-colors">
+          {/* Right Column: Dataset card — the visual anchor */}
+          <div className="flex-1 flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-md w-full lg:ml-auto"
+            >
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <h3 className="text-xl font-semibold mb-4 text-white">
                   {t.initiative.datasetTitle}
                 </h3>
@@ -123,7 +125,7 @@ export default function HistoricalArchives() {
                     href="https://huggingface.co/datasets/ferjorosa/bne-hemeroteca-ocr-xix"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#FFD21E] text-gray-900 px-4 py-2.5 rounded-lg font-semibold hover:bg-[#F5C518] transition-colors text-sm"
+                    className="inline-flex items-center gap-2 bg-[#FFD21E] text-gray-900 px-4 py-2.5 rounded-lg font-semibold hover:bg-[#FFF0B3] transition-colors text-sm"
                   >
                     <span role="img" aria-label={t.actions.datasetAriaLabel}>🤗</span>
                     {t.actions.dataset}
@@ -139,7 +141,6 @@ export default function HistoricalArchives() {
                   </a>
                 </div>
               </div>
-
             </motion.div>
           </div>
         </div>
@@ -172,7 +173,7 @@ export default function HistoricalArchives() {
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 active === i
                   ? "bg-[#147ca6] text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  : "bg-white/10 text-white/80 hover:bg-white/20"
               }`}
             >
               {ex.label}
@@ -188,24 +189,24 @@ export default function HistoricalArchives() {
         >
           {data && <OcrExampleViewer data={data} />}
           {!data && !error && (
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 h-96 flex items-center justify-center text-gray-400">
+            <div className="rounded-2xl border border-white/10 bg-white/5 h-96 flex items-center justify-center text-white/50">
               {common.loadingExample}
             </div>
           )}
           {error && (
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 h-96 flex items-center justify-center text-gray-400">
+            <div className="rounded-2xl border border-white/10 bg-white/5 h-96 flex items-center justify-center text-white/50">
               {common.errorExample}
             </div>
           )}
         </motion.div>
 
-        <p className="mt-4 text-sm text-gray-400 text-center">
+        <p className="mt-4 text-sm text-white/60 text-center">
           {t.imageSourcePrefix}{" "}
           <a
             href="https://bvpb.mcu.es/es/inicio/inicio.do"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-gray-600"
+            className="underline hover:text-white"
           >
             {t.imageSource}
           </a>

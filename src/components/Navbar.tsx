@@ -13,7 +13,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isDark = isHome || pathname === "/about";
+  const isDark = isHome || pathname === "/about" || pathname === "/historical-archives";
   const t = useTranslation("navbar");
 
   const navigation = [
@@ -30,7 +30,7 @@ export default function Navbar() {
           : "bg-white border-gray-100 sticky top-0"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4">
         <div className={clsx("relative flex h-16", isHome ? "justify-center" : "justify-between")}>
           {/* Brand — hidden on the home page (Sakana-style) */}
           {!isHome && (

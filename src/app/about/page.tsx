@@ -15,11 +15,11 @@ export default function About() {
         aria-hidden
       />
 
-      <div className="max-w-4xl mx-auto px-4 py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 py-20 md:py-28">
         <h1 className="font-jost text-4xl md:text-5xl font-bold tracking-tight text-white mb-5">
           {t.title}
         </h1>
-        <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed max-w-2xl mb-16">
+        <p className="text-lg md:text-xl text-blue-100/90 leading-relaxed mb-16">
           {t.intro}
         </p>
 
