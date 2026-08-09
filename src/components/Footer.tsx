@@ -17,18 +17,18 @@ export default function Footer() {
         isHome ? "bg-transparent border-white/10" : "bg-white border-gray-100"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-8 py-4">
+        <div className="flex items-center justify-between gap-3">
           <p
             className={clsx(
-              "text-xs text-center md:text-left",
+              "text-xs min-w-0 truncate",
               isHome ? "text-white/70" : "text-gray-400"
             )}
           >
             &copy; {new Date().getFullYear()} Cynosural AI Lab
           </p>
 
-          <div className="flex items-center justify-center gap-5">
+          <div className="flex items-center justify-center gap-5 flex-shrink-0">
             <a
               href="https://github.com/cynosural-ai"
               target="_blank"
