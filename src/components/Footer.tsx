@@ -1,17 +1,30 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 import { useTranslation } from "@/i18n/LocaleProvider";
 import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default function Footer() {
   const t = useTranslation("footer");
+  const isHome = usePathname() === "/";
 
   return (
-    <footer className="border-t border-gray-100 bg-white">
+    <footer
+      className={clsx(
+        "border-t",
+        isHome ? "bg-transparent border-white/10" : "bg-white border-gray-100"
+      )}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-          <p className="text-xs text-gray-400 text-center md:text-left">
+          <p
+            className={clsx(
+              "text-xs text-center md:text-left",
+              isHome ? "text-white/70" : "text-gray-400"
+            )}
+          >
             &copy; {new Date().getFullYear()} Cynosural AI Lab
           </p>
 
@@ -20,7 +33,7 @@ export default function Footer() {
               href="https://github.com/cynosural-ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-900"
+              className={isHome ? "text-white" : "text-gray-900"}
               aria-label={t.resources.github}
             >
               <Image src="/github.svg" alt="" width={14} height={14} className="flex-shrink-0" />
@@ -34,7 +47,7 @@ export default function Footer() {
             >
               <span role="img" aria-label={t.resources.huggingFace}>🤗</span>
             </a>
-            <LocaleSwitcher ariaLabel={t.langToggle.selectLanguage} />
+            <LocaleSwitcher onDark={isHome} ariaLabel={t.langToggle.selectLanguage} />
           </div>
         </div>
       </div>
