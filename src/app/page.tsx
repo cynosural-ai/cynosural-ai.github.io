@@ -12,15 +12,16 @@ export default function Home() {
     // Hero fills the exact space between the navbar and footer. The layout's
     // <main> is a flex column, so flex-grow here absorbs the remaining viewport
     // height — no hard-coded calc, and the page never overflows on the home route.
-    <section className="relative flex-grow overflow-hidden bg-[#060e1c] flex flex-col items-center justify-center text-center px-4">
-      {/* Night-sky gradient behind the starfield */}
+    <section className="flex-grow flex flex-col items-center justify-center text-center px-4">
+      {/* Full-viewport night sky: a fixed layer behind everything, so it also
+          shows through the transparent navbar and footer instead of the white
+          body background. PolarisSky lives here so stars span the whole sky. */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-[#040a16] via-[#0a1f3d] to-[#0d2b4e]"
+        className="fixed inset-0 -z-10 bg-gradient-to-b from-[#040a16] via-[#0a1f3d] to-[#0d2b4e]"
         aria-hidden
-      />
-
-      {/* Interactive starfield: twinkling stars, parallax, shooting stars */}
-      <PolarisSky />
+      >
+        <PolarisSky />
+      </div>
 
       <MotionConfig reducedMotion="user">
         <motion.div
