@@ -64,7 +64,7 @@ export default function HistoricalArchives() {
         aria-hidden
       />
       {/* Main Initiative Section */}
-      <section id="main-initiative" className="w-full min-h-[calc(100vh-64px)] text-white relative flex flex-col">
+      <section id="main-initiative" className="w-full min-h-[calc(100vh-80px)] text-white relative flex flex-col">
         <div className="max-w-7xl mx-auto px-4 w-full flex-grow flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 md:py-20">
 
           {/* Left Column: Narrative */}

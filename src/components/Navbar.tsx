@@ -31,7 +31,7 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className={clsx("relative flex h-16", isHome ? "justify-center" : "justify-between")}>
+        <div className={clsx("relative flex h-20", isHome ? "justify-center" : "justify-between")}>
           {/* Brand — hidden on the home page (Sakana-style) */}
           {!isHome && (
             <div className="flex items-center">
@@ -108,7 +108,7 @@ export default function Navbar() {
                 : "bg-white"
             )}
           >
-            <div className="flex items-center justify-between px-4 h-16">
+            <div className="flex items-center justify-between px-4 h-20">
               <span
                 className={clsx(
                   "font-jost text-xl tracking-tight",
