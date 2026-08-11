@@ -21,3 +21,19 @@ body {
 .font-jost {
   font-family: var(--font-jost), sans-serif;
 }
+
+.markdown { color: rgb(219 234 254 / 0.92); font-size: 1.125rem; line-height: 1.8; }
+.markdown h1, .markdown h2, .markdown h3 { color: white; font-family: var(--font-jost), sans-serif; line-height: 1.25; margin: 2rem 0 0.75rem; }
+.markdown h1 { font-size: 2.25rem; }
+.markdown h2 { font-size: 1.75rem; }
+.markdown h3 { font-size: 1.35rem; }
+.markdown p, .markdown ul, .markdown ol, .markdown blockquote { margin: 1rem 0; }
+.markdown ul, .markdown ol { padding-left: 1.5rem; }
+.markdown ul { list-style: disc; }
+.markdown ol { list-style: decimal; }
+.markdown a { color: #7cc7e8; text-decoration: underline; }
+.markdown img { display: block; max-width: 100%; height: auto; margin: 2rem auto; border-radius: 0.75rem; }
+.markdown code { background: rgb(255 255 255 / 0.1); padding: 0.15rem 0.35rem; border-radius: 0.25rem; }
+.markdown pre { overflow-x: auto; background: rgb(0 0 0 / 0.3); padding: 1rem; border-radius: 0.5rem; }
+.markdown pre code { background: none; padding: 0; }
+.markdown blockquote { border-left: 3px solid #209bd0; padding-left: 1rem; color: rgb(191 219 254 / 0.8); }
