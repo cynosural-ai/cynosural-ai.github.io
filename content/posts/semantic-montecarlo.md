@@ -21,7 +21,7 @@ From the 80-row benchmark split, Semantic Monte Carlo achieves a mean absolute c
 
 1. We first take the input question.
 2. We use an LLM to paraphrase the question into $n$ variants. The goal is to preserve the underlying question while changing its phrasing to trigger different searches from different sources.
-3. We send each question variant to an [internet search agents](https://openrouter.ai/docs/guides/features/plugins/web-search). We also vary the agent used (deepseek native search, Exa API, Firecrawl, Parallel, Perplexity) to introduce additional diversity in retrieval and source selection.
+3. We send each question variant to [internet search agents](https://openrouter.ai/docs/guides/features/plugins/web-search). We also vary the agent used (deepseek native search, Exa API, Firecrawl, Parallel, Perplexity) to introduce additional diversity in retrieval and source selection.
 4. We get the estimated numerical answer and the confidence in the cited sources (leaving an option for the LLM to not answer).
 5. We then aggregate the resulting numerical estimates using confidence-weighted bootstrapping. The final output is a probability distribution over plausible numerical answers. If the searches strongly converge, the final distribution becomes concentrated. If they disagree or retrieve a large number of not answers, the distribution becomes more spread.
 
@@ -83,7 +83,7 @@ Because of this, we use 3 paraphrases as a practical tradeoff between cost, sear
 
 # Final Benchmark
 
-After finding an optimum number of paraphrases (3, ,as we previously discussed), we run our system on an 80-row split of our benchmark.
+After finding an optimum number of paraphrases (3, as we previously discussed), we run our system on an 80-row split of our benchmark.
 
 ![Absolute confidence error by expected confidence](/blog/smc-3.png)
 
@@ -95,7 +95,7 @@ Even in these medium-confidence regions, however, the mean absolute confidence e
 
 ![Absolute confidence error by domain](/blog/smc-4.png)
 
-A more fine-grained look shows that performance varies considerably across domains.
+A finer-grained look shows that performance varies considerably across domains.
 
 For example, within economy and business, labor and macroeconomic questions appear substantially harder than real-estate questions. Technology and media also show significant variation: streaming questions have particularly high confidence error, while cloud and space questions perform much better.
 
@@ -112,7 +112,7 @@ There are several important limitations in the current version of the method.
 
 # Future Research Lines
 
-The current version of Semantic Monte Carlo shows some good results but still can be improved and used for new usecases. We here show some directions we can explore in the future for improving both the quality of the distributions and their usefulness in downstream models.
+The current version of Semantic Monte Carlo shows some good results but still can be improved and used for new use cases. We here show some directions we can explore in the future for improving both the quality of the distributions and their usefulness in downstream models.
 
 - Use Semantic Monte Carlo to generate priors for Bayesian models.
 - Use Semantic Monte Carlo, sampled over time, to generate exogenous variables for time-series models.
