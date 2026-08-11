@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  /* Dark by default so overscroll/rubber-band edges never leak white on the
+     sky-themed pages; light pages paint their own white background. */
+  --background: #060e1c;
   --foreground: #171717;
 }
 

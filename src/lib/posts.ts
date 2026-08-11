@@ -14,6 +14,7 @@ export type Post = {
   slug: string;
   title: string;
   date: string;
+  author?: string;
   description?: string;
   content: string;
 };
@@ -39,6 +40,11 @@ export async function getPost(slug: string): Promise<Post> {
     slug,
     title: String(data.title ?? slug),
     date: String(data.date ?? ""),
+    author: data.author
+      ? Array.isArray(data.author)
+        ? data.author.join(", ")
+        : String(data.author)
+      : undefined,
     description: data.description ? String(data.description) : undefined,
     content: html,
   };

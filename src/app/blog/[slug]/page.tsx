@@ -28,7 +28,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <div className="max-w-3xl w-full mx-auto relative">
         <p className="text-sm text-blue-200/70 mb-4">{post.date}</p>
         <h1 className="font-jost text-5xl mb-4">{post.title}</h1>
-        {post.description && <p className="text-xl text-blue-100/80 mb-10">{post.description}</p>}
+        {post.author && (
+          <p className="text-sm text-blue-200/70 mb-10">{post.author}</p>
+        )}
         <div className="markdown" dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
     </article>

@@ -1,12 +1,11 @@
 ---
 title: "Semantic Monte Carlo"
 date: "2026-08-11"
-description: "A short introduction to exploring meaning through probabilistic sampling."
+description: "A short introduction to exploring meaning through probabilistic sampling"
+author: ["Alberto Sánchez", "Carlos Pujades", "Fernando Rodriguez"]
 ---
 
-# Semantic Monte Carlo
-
-## Abstract
+# Abstract
 
 Current internet search agents perform well on determinate numerical questions, where the answer is already available in existing sources (e.g. the reported revenue of a company). They are, however, less useful for non-determinate numerical questions whose correct answer is mostly unknown (e.g. the future revenue of a company).
 
@@ -16,7 +15,7 @@ Since non-determinate questions cannot be evaluated using standard question-answ
 
 From the 80-row benchmark split, Semantic Monte Carlo achieves a mean absolute confidence error of 0.288, with substantially better calibration at the extremes: 0.084 error at 95% expected confidence and 0.155 at 5%, versus 0.492 at 35%.
 
-## Architecture
+# Architecture
 
 ![Semantic Monte Carlo architecture](/blog/smc-1.png)
 
@@ -26,7 +25,7 @@ From the 80-row benchmark split, Semantic Monte Carlo achieves a mean absolute c
 4. We get the estimated numerical answer and the confidence in the cited sources (leaving an option for the LLM to not answer).
 5. We then aggregate the resulting numerical estimates using confidence-weighted bootstrapping. The final output is a probability distribution over plausible numerical answers. If the searches strongly converge, the final distribution becomes concentrated. If they disagree or retrieve a large number of not answers, the distribution becomes more spread.
 
-## Benchmarking Impossible Questions
+# Benchmarking Impossible Questions
 
 For determinate questions, evaluation is straightforward: the model's prediction can be compared against a known ground-truth answer, and several existing benchmarks already cover this setting (e.g. [SimpleQA](https://arxiv.org/abs/2411.04368), [TriviaQA](https://arxiv.org/abs/1705.03551)). The main value of our model, however, lies in estimating non-determinate questions, where the answer is unknown. We therefore want these questions to be a central part of the benchmark. The difficulty is that, by definition, they cannot be assigned reliable target answers at evaluation time.
 
@@ -39,7 +38,7 @@ Thus, rather than evaluating whether the model predicts an unknowable answer cor
 
 Based on this idea, we created a [benchmark](https://huggingface.co/datasets/cynosural/semantic-montecarlo-benchmark) containing 300 questions, each with a corresponding expected confidence and domain. We include the domain because it likely has an impact on confidence: some domains are inherently more predictable than others.
 
-## The Metric
+# The Metric
 
 The proposed metric to measure confidence in our bootstrapped distributions is a variation of [normalized variance](https://en.wikipedia.org/wiki/Coefficient_of_variation). It measures how concentrated the numeric probability mass is relative to a uniform distribution, and then scales that score by the probability of obtaining a numeric answer.
 
@@ -65,7 +64,7 @@ $$
 
 Here, a lower score indicates better calibration of our distribution.
 
-## Hyperparameter Search
+# Hyperparameter Search
 
 One of the most critical hyperparameters to optimize for this system is the number of paraphrases —and therefore consecutive searches— that we perform.
 
@@ -82,7 +81,7 @@ Our interpretation is that additional searches are more useful when there is a r
 
 Because of this, we use 3 paraphrases as a practical tradeoff between cost, search diversity, and performance.
 
-## Final Benchmark
+# Final Benchmark
 
 After finding an optimum number of paraphrases (3, ,as we previously discussed), we run our system on an 80-row split of our benchmark.
 
@@ -102,7 +101,7 @@ For example, within economy and business, labor and macroeconomic questions appe
 
 This suggests that calibration is not only a property of the model. It also depends on the information environment of each domain: how much relevant information exists, how correlated the available sources are, how predictable the underlying process is, and how much disagreement exists between reasonable forecasts.
 
-## Limitations
+# Limitations
 
 There are several important limitations in the current version of the method.
 
@@ -111,7 +110,7 @@ There are several important limitations in the current version of the method.
 3. The expected-confidence labels in the benchmark are themselves subjective. They are easier to define than future numerical ground truth, but they are still an approximation of how uncertain a question should be.
 4. The current experimental splits are small because of the budget. More experimentation is needed to show robustness.
 
-## Future Research Lines
+# Future Research Lines
 
 The current version of Semantic Monte Carlo shows some good results but still can be improved and used for new usecases. We here show some directions we can explore in the future for improving both the quality of the distributions and their usefulness in downstream models.
 
