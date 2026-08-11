@@ -27,14 +27,14 @@ From the 80-row benchmark split, Semantic Monte Carlo achieves a mean absolute c
 
 # Benchmarking Impossible Questions
 
-For determinate questions, evaluation is straightforward: the model's prediction can be compared against a known ground-truth answer, and several existing benchmarks already cover this setting (e.g. [SimpleQA](https://arxiv.org/abs/2411.04368), [TriviaQA](https://arxiv.org/abs/1705.03551)). The main value of our model, however, lies in estimating non-determinate questions, where the answer is unknown. We therefore want these questions to be a central part of the benchmark. The difficulty is that, by definition, they cannot be assigned reliable target answers at evaluation time.
+For determinate questions, evaluation is straightforward: the method's prediction can be compared against a known ground-truth answer, and several existing benchmarks already cover this setting (e.g. [SimpleQA](https://arxiv.org/abs/2411.04368), [TriviaQA](https://arxiv.org/abs/1705.03551)). The main value of our method, however, lies in estimating non-determinate questions, where the answer is unknown. We therefore want these questions to be a central part of the benchmark. The difficulty is that, by definition, they cannot be assigned reliable target answers at evaluation time.
 
 Because of that, we propose a different benchmarking method. Instead of defining a target answer for each question, we define a target confidence.
 
 Determinate, well-known questions such as: "What was Apple's total revenue in the last fiscal quarter?" should have a very high target confidence.
 Non-determinate or highly uncertain questions such as "How many gold medals will the leading country win at the 2040 Summer Olympics?" should instead have a very low target confidence.
 
-Thus, rather than evaluating whether the model predicts an unknowable answer correctly, we evaluate how well calibrated the model is about the uncertainty of its answer.
+Thus, rather than evaluating whether the method predicts an unknowable answer correctly, we evaluate how well calibrated the method is about the uncertainty of its answer.
 
 Based on this idea, we created a [benchmark](https://huggingface.co/datasets/cynosural/semantic-montecarlo-benchmark) containing 300 questions, each with a corresponding expected confidence and domain. We include the domain because it likely has an impact on confidence: some domains are inherently more predictable than others.
 
@@ -56,7 +56,7 @@ $$
 
 Intuitively, if the different searches produce answers concentrated around the same value, the distribution receives a higher confidence. If they produce very different values or non answers, confidence decreases.
 
-We then define our main benchmark metric as the absolute difference between the model confidence and the expected confidence assigned to each question:
+We then define our main benchmark metric as the absolute difference between the method confidence and the expected confidence assigned to each question:
 
 $$
 \text{Absolute Difference}=|C-\text{Expected Confidence}|
@@ -66,7 +66,7 @@ Here, a lower score indicates better calibration of our distribution.
 
 # Hyperparameter Search
 
-One of the most critical hyperparameters to optimize for this system is the number of paraphrases —and therefore consecutive searches— that we perform.
+One of the most critical hyperparameters to optimize for this method is the number of paraphrases —and therefore consecutive searches— that we perform.
 
 In practice, this defines the tradeoff between cost and performance: more searches require more token spending, but also provides more datapoints to refine the final distribution.
 
@@ -83,11 +83,11 @@ Because of this, we use 3 paraphrases as a practical tradeoff between cost, sear
 
 # Final Benchmark
 
-After finding an optimum number of paraphrases (3, as we previously discussed), we run our system on an 80-row split of our benchmark.
+After finding an optimum number of paraphrases (3, as we previously discussed), we run our method on an 80-row split of our benchmark.
 
 ![Absolute confidence error by expected confidence](/blog/smc-3.png)
 
-The model appears to recover a meaningful confidence signal.
+The method appears to recover a meaningful confidence signal.
 
 Confidence aligns with the expected confidence particularly well at the extremes: really hard to answer and really easy to answer questions. The middle of the range shows less calibration. These are questions where some useful evidence exists, but where the answer is still uncertain enough that different searches can reasonably disagree.
 
@@ -99,7 +99,7 @@ A finer-grained look shows that performance varies considerably across domains.
 
 For example, within economy and business, labor and macroeconomic questions appear substantially harder than real-estate questions. Technology and media also show significant variation: streaming questions have particularly high confidence error, while cloud and space questions perform much better.
 
-This suggests that calibration is not only a property of the model. It also depends on the information environment of each domain: how much relevant information exists, how correlated the available sources are, how predictable the underlying process is, and how much disagreement exists between reasonable forecasts.
+This suggests that calibration is not only a property of the method. It also depends on the information environment of each domain: how much relevant information exists, how correlated the available sources are, how predictable the underlying process is, and how much disagreement exists between reasonable forecasts.
 
 # Limitations
 
