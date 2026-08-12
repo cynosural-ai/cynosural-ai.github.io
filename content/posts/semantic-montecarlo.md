@@ -7,13 +7,9 @@ author: ["Alberto Sánchez", "Carlos Pujades", "Fernando Rodriguez"]
 
 # Abstract
 
-Current internet search agents perform well on determinate numerical questions, where the answer is already available in existing sources (e.g. the reported revenue of a company). They are, however, less useful for non-determinate numerical questions whose correct answer is mostly unknown (e.g. the future revenue of a company).
+Current internet search agents perform well on determinate numerical questions whose answers already exist in published sources, but are less useful for non-determinate questions whose correct values are unknown. We introduce Semantic Monte Carlo, which generates n paraphrased variants of a numerical question, queries them with multiple search agents, and combines their answers using confidence-weighted bootstrapping. This produces a distribution over plausible values rather than a single estimate.
 
-We created Semantic Monte Carlo, a simple method for producing probabilistic numerical estimates from internet evidence. Given a numerical question, we generate $n$ paraphrased variants, query multiple internet search agents and aggregate the resulting answers using confidence-weighted bootstrapping. This produces a distribution over plausible numerical answers rather than a single point estimate.
-
-Since non-determinate questions cannot be evaluated using standard question-answer benchmarks, we additionally introduce a confidence-calibration benchmark: we measure the absolute error between expected and estimated confidence.
-
-From the 80-row benchmark split, Semantic Monte Carlo achieves a mean absolute confidence error of 0.288, with substantially better calibration at the extremes: 0.084 error at 95% expected confidence and 0.155 at 5%, versus 0.492 at 35%.
+To evaluate non-determinate questions, we introduce a confidence-calibration benchmark measuring absolute error between expected and estimated confidence. On an 80-row benchmark split, Semantic Monte Carlo achieves a mean absolute confidence error of 0.288, with stronger calibration at the extremes: 0.084 error at 95% expected confidence and 0.155 at 5%, compared with 0.492 at 35%.
 
 # Architecture
 
@@ -103,21 +99,13 @@ This suggests that calibration is not only a property of the method. It also dep
 
 # Limitations
 
-There are several important limitations in the current version of the method.
-
-1. The samples are not truly independent. Different paraphrases and search agents can still retrieve the same articles, the same underlying datasets, or sources derived from one another. This can make the final distribution appear more concentrated than the underlying evidence actually is.
-2. The confidence metric is heuristic. Low variance does not necessarily imply that an estimate is correct: several correlated sources can agree and still be systematically wrong.
-3. The expected-confidence labels in the benchmark are themselves subjective. They are easier to define than future numerical ground truth, but they are still an approximation of how uncertain a question should be.
-4. The current experimental splits are small because of the budget. More experimentation is needed to show robustness.
+There are several important limitations to the current method. The samples are not truly independent, since different paraphrases and search agents may retrieve the same sources or rely on shared underlying data, making the resulting distribution appear more confident than the evidence warrants. The confidence metric is also heuristic: low variance can reflect correlated agreement rather than correctness. Finally, the benchmark’s expected-confidence labels are subjective approximations of uncertainty rather than objective ground truth and are relatively small due to budget constraints.
 
 # Future Research Lines
 
 The current version of Semantic Monte Carlo shows some good results but still can be improved and used for new use cases. We here show some directions we can explore in the future for improving both the quality of the distributions and their usefulness in downstream models.
 
-- Use Semantic Monte Carlo to generate priors for Bayesian models.
-- Use Semantic Monte Carlo, sampled over time, to generate exogenous variables for time-series models.
-- Fine-tune smaller models for this task, since the underlying extraction and aggregation problem is not especially complicated.
+- Use Semantic Monte Carlo for other models such as Bayesian Networks (as priors) or Time-Series Models (es exogenous variables).
+- Reduce the overall cost by fine-tuning smaller models, adjusting the number of searches so easier questions don't need to sample that much.
 - Measure correlation across sources to better refine the resulting distribution and avoid treating correlated sources as independent evidence.
-- Dynamic sampling: perform more searches on harder or less-converged questions, and fewer searches when the distribution stabilizes quickly.
-- See whether there is a correlation between the generated distributions and prediction-market odds.
 - Use Semantic Monte Carlo to estimate unknown parameters for mathematical models (e.g. financial, demographic, or population models).
