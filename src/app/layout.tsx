@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Jost } from "next/font/google";
 import "./globals.css";
+import "katex/dist/katex.min.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
@@ -16,11 +17,11 @@ export const metadata: Metadata = {
   description: enCommon.metadata.description,
   icons: {
     icon: [
-      { url: "/cynosural_logo.ico", sizes: "any" },
-      { url: "/cynosural_logo.ico", type: "image/x-icon" },
+      { url: "/polaris.ico", sizes: "any" },
+      { url: "/polaris.ico", type: "image/x-icon" },
     ],
-    shortcut: "/cynosural_logo.ico",
-    apple: "/cynosural_logo.ico",
+    shortcut: "/polaris.ico",
+    apple: "/polaris.ico",
   },
 };
 

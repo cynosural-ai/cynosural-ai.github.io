@@ -10,7 +10,12 @@ export default function Footer() {
   const t = useTranslation("footer");
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isDark = isHome || pathname === "/about" || pathname === "/historical-archives";
+  const isDark =
+    isHome ||
+    pathname === "/about" ||
+    pathname === "/historical-archives" ||
+    pathname === "/blog" ||
+    pathname.startsWith("/blog/");
 
   return (
     <footer
