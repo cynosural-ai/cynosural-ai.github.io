@@ -10,12 +10,19 @@ import rehypeStringify from "rehype-stringify";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
+export type PostLink = {
+  label: string;
+  url: string;
+  icon: "github" | "huggingface";
+};
+
 export type Post = {
   slug: string;
   title: string;
   date: string;
   author?: string;
   description?: string;
+  links?: PostLink[];
   content: string;
 };
 
@@ -46,6 +53,13 @@ export async function getPost(slug: string): Promise<Post> {
         : String(data.author)
       : undefined,
     description: data.description ? String(data.description) : undefined,
+    links: Array.isArray(data.links)
+      ? data.links.map((l: Record<string, unknown>) => ({
+          label: String(l.label),
+          url: String(l.url),
+          icon: l.icon === "github" || l.icon === "huggingface" ? l.icon : "github",
+        }))
+      : undefined,
     content: html,
   };
 }

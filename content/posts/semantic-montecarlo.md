@@ -1,8 +1,15 @@
 ---
 title: "Semantic Monte Carlo"
-date: "2026-08-11"
+date: "2026-08-14"
 description: "A short introduction to exploring meaning through probabilistic sampling"
 author: ["Alberto Sánchez", "Carlos Pujades", "Fernando Rodriguez"]
+links:
+  - label: "Code"
+    url: "https://github.com/cynosural-ai/semantic-montecarlo"
+    icon: "github"
+  - label: "Dataset"
+    url: "https://huggingface.co/datasets/cynosural/semantic-montecarlo-benchmark"
+    icon: "huggingface"
 ---
 
 # Abstract

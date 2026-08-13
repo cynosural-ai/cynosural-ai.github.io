@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getPost, getPostSlugs } from "@/lib/posts";
+import { Github } from "lucide-react";
+import { getPost, getPostSlugs, type PostLink } from "@/lib/posts";
 
 export const dynamicParams = false;
 
@@ -30,6 +31,30 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         <h1 className="font-jost text-5xl mb-4">{post.title}</h1>
         {post.author && (
           <p className="text-sm text-blue-200/70 mb-10">{post.author}</p>
+        )}
+        {post.links && post.links.length > 0 && (
+          <div className="flex flex-wrap gap-4 mb-10">
+            {post.links.map((link: PostLink) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={
+                  link.icon === "huggingface"
+                    ? "inline-flex items-center gap-1.5 bg-[#FFD21E] text-gray-900 px-3.5 py-2 rounded-md font-semibold hover:bg-[#FFF0B3] transition-colors text-xs"
+                    : "inline-flex items-center gap-1.5 bg-[#24292e] text-white px-3.5 py-2 rounded-md font-semibold hover:bg-[#2f363d] transition-colors text-xs"
+                }
+              >
+                {link.icon === "huggingface" ? (
+                  <span role="img" aria-label="Hugging Face" className="text-sm leading-none">🤗</span>
+                ) : (
+                  <Github className="w-3.5 h-3.5 flex-shrink-0" />
+                )}
+                {link.label}
+              </a>
+            ))}
+          </div>
         )}
         <div className="markdown" dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
