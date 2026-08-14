@@ -14,7 +14,7 @@ links:
 
 # Abstract
 
-Current internet search agents perform well on determinate numerical questions whose answers already exist in published sources, but are less useful for non-determinate questions whose correct values are unknown. We introduce Semantic Monte Carlo, which generates n paraphrased variants of a numerical question, queries them with multiple search agents, and combines their answers using confidence-weighted bootstrapping. This produces a distribution over plausible values rather than a single estimate.
+Current internet search agents perform well on determinate numerical questions whose answers already exist in published sources, but are less useful for non-determinate questions whose correct values are unknown. We introduce Semantic Monte Carlo, which generates $n$ paraphrased variants of a numerical question, queries them with multiple search agents, and combines their answers using confidence-weighted bootstrapping. This produces a distribution over plausible values rather than a single estimate.
 
 To evaluate non-determinate questions, we introduce a confidence-calibration benchmark measuring absolute error between expected and estimated confidence. On an 80-row benchmark split, Semantic Monte Carlo achieves a mean absolute confidence error of 0.288, with stronger calibration at the extremes: 0.084 error at 95% expected confidence and 0.155 at 5%, compared with 0.492 at 35%.
 
@@ -26,7 +26,7 @@ To evaluate non-determinate questions, we introduce a confidence-calibration ben
 2. We use an LLM to paraphrase the question into $n$ variants. The goal is to preserve the underlying question while changing its phrasing to trigger different searches from different sources.
 3. We send each question variant to [internet search agents](https://openrouter.ai/docs/guides/features/plugins/web-search). We also vary the agent used (deepseek native search, Exa API, Firecrawl, Parallel, Perplexity) to introduce additional diversity in retrieval and source selection.
 4. We get the estimated numerical answer and the confidence in the cited sources (leaving an option for the LLM to not answer).
-5. We then aggregate the resulting numerical estimates using confidence-weighted bootstrapping. The final output is a probability distribution over plausible numerical answers. If the searches strongly converge, the final distribution becomes concentrated. If they disagree or retrieve a large number of not answers, the distribution becomes more spread.
+5. We then aggregate the resulting numerical estimates using confidence-weighted bootstrapping. The final output is a probability distribution over plausible numerical answers. If the searches strongly converge, the final distribution becomes concentrated. If they disagree or retrieve a large number of non-answers, the distribution becomes more spread.
 
 # Benchmarking Impossible Questions
 
@@ -57,7 +57,7 @@ $$
 - $\bar{x}$: ordinary mean of the unique numeric answers.
 - $N$: number of unique numeric answers.
 
-Intuitively, if the different searches produce answers concentrated around the same value, the distribution receives a higher confidence. If they produce very different values or non answers, confidence decreases.
+Intuitively, if the different searches produce answers concentrated around the same value, the distribution receives a higher confidence. If they produce very different values or non-answers, confidence decreases.
 
 We then define our main benchmark metric as the absolute difference between the method confidence and the expected confidence assigned to each question:
 
@@ -71,9 +71,9 @@ Here, a lower score indicates better calibration of our distribution.
 
 One of the most critical hyperparameters to optimize for this method is the number of paraphrases —and therefore consecutive searches— that we perform.
 
-In practice, this defines the tradeoff between cost and performance: more searches require more token spending, but also provides more datapoints to refine the final distribution.
+In practice, this defines the tradeoff between cost and performance: more searches require more token spending, but also provide more datapoints to refine the final distribution.
 
-For the hyperparameter search, we evaluate the absolute difference between expected and calculated confidence over a 20-row split of our dataset with a search over $\text{number of paraphrases} \in \{0,2,5,10\}$
+For the hyperparameter search, we evaluate the absolute difference between expected and calculated confidence over a 20-row split of our dataset with a search over $\text{number of paraphrases} \in \{0,2,5,10\}$.
 
 ![Hyperparameter search](/blog/smc-2.png)
 
@@ -112,7 +112,7 @@ There are several important limitations to the current method. The samples are n
 
 The current version of Semantic Monte Carlo shows some good results but still can be improved and used for new use cases. We here show some directions we can explore in the future for improving both the quality of the distributions and their usefulness in downstream models.
 
-- Use Semantic Monte Carlo for other models such as Bayesian Networks (as priors) or Time-Series Models (es exogenous variables).
+- Use Semantic Monte Carlo for other models such as Bayesian Networks (as priors) or Time-Series Models (as exogenous variables).
 - Reduce the overall cost by fine-tuning smaller models, adjusting the number of searches so easier questions don't need to sample that much.
 - Measure correlation across sources to better refine the resulting distribution and avoid treating correlated sources as independent evidence.
 - Use Semantic Monte Carlo to estimate unknown parameters for mathematical models (e.g. financial, demographic, or population models).
