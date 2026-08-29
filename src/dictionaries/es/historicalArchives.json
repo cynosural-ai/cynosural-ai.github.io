@@ -1,33 +1,58 @@
 {
-  "scrollAriaLabel": "Desplazarse a los ejemplos",
+  "scrollAriaLabel": "Desplazarse para ver cómo trabajamos",
   "initiative": {
-    "badge": "Iniciativa actual",
-    "title": "Archivos históricos mas accesibles",
-    "p1": "Bibliotecas y museos albergan amplias colecciones de documentos digitalizados que se pueden buscar por metadatos, pero no por su contenido. Estamos trabajando para cambiarlo aplicando modelos OCR de última generación que extraen el texto completo de estos archivos, abriéndolos a la investigación, la exploración y el entrenamiento de modelos de IA.",
-    "p2": "Nuestra primera publicación abarca más de 830.000 páginas de la Biblioteca Nacional de España, procedentes de publicaciones del siglo XIX sobre ciencia, medicina, literatura y más. A continuación, planeamos expandirnos a otros archivos de toda España.",
-    "datasetTitle": "Dataset OCR de la Hemeroteca BNE"
+    "title": "Abriendo los archivos históricos",
+    "p1": "Muchas bibliotecas y museos han digitalizado sus colecciones históricas, pero la mayoría de estos documentos solo se pueden buscar por los datos del catálogo, no por el contenido de sus páginas. Trabajamos para cambiarlo, para que investigadores y público en general puedan explorar este enorme volumen de información.",
+    "p2": "Utilizamos modelos avanzados de OCR para reconocer tanto el texto como la estructura de cada página. Entregamos los resultados en ALTO XML, un formato que ya utilizan muchos sistemas de bibliotecas y archivos. Hemos procesado más de 800.000 páginas y seguimos trabajando con colecciones de España y otros países."
   },
-  "stats": {
-    "pages": "Páginas",
-    "tokens": "Tokens",
-    "collections": "Colecciones"
+  "collageAlt": "Collage de portadas de periódicos históricos",
+  "howItWorks": {
+    "title": "Cómo trabajamos",
+    "items": [
+      {
+        "title": "Una herramienta, muchos modelos",
+        "body": "Reunimos en una sola herramienta modelos avanzados de OCR y visión-lenguaje, como OlmOCR 2, PaddleOCR y GLM-OCR. Cada página se interpreta como un todo, teniendo en cuenta su texto, diseño y estructura."
+      },
+      {
+        "title": "Compatible con sus sistemas",
+        "body": "Entregamos cada página en ALTO XML v3, un formato que ya utilizan muchos sistemas de búsqueda de bibliotecas y museos. El contenido queda listo para la búsqueda y el resaltado, sin necesidad de desarrollar una integración propia."
+      },
+      {
+        "title": "De miles a millones de páginas",
+        "body": "Ya sea una colección de miles o de millones de páginas, nuestros procesos se adaptan a su tamaño y ofrecen informes claros sobre el progreso y la calidad."
+      }
+    ]
   },
-  "actions": {
-    "dataset": "Dataset",
-    "code": "Código",
-    "datasetAriaLabel": "hugging face"
+  "examplesTitle": "Pruébalo",
+  "examplesHint": "Pasa el ratón por la página para explorar las regiones que el modelo ha detectado y cambia a la vista ALTO XML para ver el formato estándar que consumen bibliotecas y archivos.",
+  "cta": {
+    "title": "Trabaja con nosotros",
+    "body": "¿Eres una biblioteca, un archivo o un museo y quieres desbloquear tus colecciones? Escríbenos.",
+    "contact": "Contáctanos",
+    "email": "ferjorosa@cynosural.org"
   },
-  "alt": "Collage de periódicos históricos",
   "imageSourcePrefix": "Imagen de la",
   "imageSource": "Biblioteca Virtual del Patrimonio Bibliográfico",
   "viewer": {
     "extractedText": "Texto extraído",
+    "textView": "Ver texto extraído",
+    "altoView": "Ver como ALTO XML",
     "regions": "regiones",
-    "imgAlt": "Página de documento histórico con regiones OCR"
+    "imgAlt": "Página de documento histórico con regiones OCR",
+    "altoTitle": "ALTO XML v3"
   },
   "examples": [
-    { "label": "#1", "src": "/historical-archives/le_0011.json" },
-    { "label": "#2", "src": "/historical-archives/co_0079.json" },
-    { "label": "#3", "src": "/historical-archives/img_0317.json" }
+    {
+      "label": "#1",
+      "src": "/historical-archives/le_0011.json"
+    },
+    {
+      "label": "#2",
+      "src": "/historical-archives/co_0079.json"
+    },
+    {
+      "label": "#3",
+      "src": "/historical-archives/img_0317.json"
+    }
   ]
 }
