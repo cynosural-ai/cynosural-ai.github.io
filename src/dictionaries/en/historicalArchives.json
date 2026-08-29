@@ -1,33 +1,58 @@
 {
-  "scrollAriaLabel": "Scroll to examples",
+  "scrollAriaLabel": "Scroll to how it works",
   "initiative": {
-    "badge": "Current Initiative",
     "title": "Opening Historical Archives",
-    "p1": "Libraries and museums contain vast collections of scanned documents that are searchable by metadata but not by content. We are working on changing that by applying state-of-the-art OCR models to extract the full text from these archives, opening them up for research, exploration, and AI training.",
-    "p2": "Our first release covers over 830,000 pages from the Biblioteca Nacional de España, drawn from 19th-century publications in science, medicine, literature, and more. Next, we plan to expand to other archives across Spain.",
-    "datasetTitle": "BNE Hemeroteca OCR"
+    "p1": "Many libraries and museums have digitized their historical collections, but these documents can be searched most of the time only by catalog details, not by the actual page content. We are working to change that, so researchers and the general public can explore this vast data.",
+    "p2": "We use frontier OCR models to recognize both the text and structure of each page. We deliver the results in ALTO XML, a format already used by many library and archive systems. We have processed more than 800,000 pages and continue this work with collections in Spain and other countries."
   },
-  "stats": {
-    "pages": "Pages",
-    "tokens": "Tokens",
-    "collections": "Collections"
+  "collageAlt": "Collage of historical newspaper front pages",
+  "howItWorks": {
+    "title": "How we work",
+    "items": [
+      {
+        "title": "Leading models, one toolkit",
+        "body": "Use leading OCR and vision-language models, including OlmOCR-2, PaddleOCR and GLM-OCR, from a single toolkit. They capture the text, layout and structure of each page."
+      },
+      {
+        "title": "Formats archives already use",
+        "body": "Every page is delivered as ALTO XML v3, a format already used by library and museum search systems. The output works directly with search and highlighting, without custom integration."
+      },
+      {
+        "title": "Built for large collections",
+        "body": "Whether you are processing thousands or millions of pages, our workflows scale with the collection and provide clear reports on progress and quality."
+      }
+    ]
   },
-  "actions": {
-    "dataset": "Dataset",
-    "code": "Code",
-    "datasetAriaLabel": "hugging face"
+  "examplesTitle": "See it in action",
+  "examplesHint": "Hover over the page to explore the regions the model detected, and toggle the ALTO XML view to see the standard format libraries and archives consume.",
+  "cta": {
+    "title": "Work with us",
+    "body": "Are you a library, archive, or museum looking to unlock your collections? Get in touch.",
+    "contact": "Contact us",
+    "email": "ferjorosa@cynosural.org"
   },
-  "alt": "Historical Newspaper Collage",
   "imageSourcePrefix": "Image from",
   "imageSource": "Biblioteca Virtual del Patrimonio Bibliográfico",
   "viewer": {
     "extractedText": "Extracted text",
+    "textView": "View extracted text",
+    "altoView": "View as ALTO XML",
     "regions": "regions",
-    "imgAlt": "Historical document page with OCR regions"
+    "imgAlt": "Historical document page with OCR regions",
+    "altoTitle": "ALTO XML v3"
   },
   "examples": [
-    { "label": "#1", "src": "/historical-archives/le_0011.json" },
-    { "label": "#2", "src": "/historical-archives/co_0079.json" },
-    { "label": "#3", "src": "/historical-archives/img_0317.json" }
+    {
+      "label": "#1",
+      "src": "/historical-archives/le_0011.json"
+    },
+    {
+      "label": "#2",
+      "src": "/historical-archives/co_0079.json"
+    },
+    {
+      "label": "#3",
+      "src": "/historical-archives/img_0317.json"
+    }
   ]
 }

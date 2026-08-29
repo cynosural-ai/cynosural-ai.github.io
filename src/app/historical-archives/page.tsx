@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, ArrowDown } from "lucide-react";
+import Image from "next/image";
+import { ArrowDown, ScanText, FileCode2, Gauge, Mail } from "lucide-react";
 import OcrExampleViewer from "@/components/OcrExampleViewer";
 import { useTranslation } from "@/i18n/LocaleProvider";
 
@@ -18,6 +19,8 @@ type OcrData = {
   }[];
 };
 
+const HOW_ICONS = [ScanText, FileCode2, Gauge];
+
 export default function HistoricalArchives() {
   const t = useTranslation("historicalArchives");
   const common = useTranslation("common");
@@ -27,8 +30,8 @@ export default function HistoricalArchives() {
   const [data, setData] = useState<OcrData | null>(null);
   const [error, setError] = useState(false);
 
-  const scrollToExamples = () => {
-    document.getElementById("examples")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToHowItWorks = () => {
+    document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -63,6 +66,7 @@ export default function HistoricalArchives() {
         className="fixed inset-0 -z-10 bg-gradient-to-b from-[#040a16] via-[#0a1f3d] to-[#0d2b4e]"
         aria-hidden
       />
+
       {/* Main Initiative Section */}
       <section id="main-initiative" className="w-full min-h-[calc(100vh-80px)] text-white relative flex flex-col">
         <div className="max-w-7xl mx-auto px-4 w-full flex-grow flex flex-col lg:flex-row gap-8 lg:gap-16 py-12 md:py-20">
@@ -90,7 +94,7 @@ export default function HistoricalArchives() {
             </motion.div>
           </div>
 
-          {/* Right Column: Dataset card — the visual anchor */}
+          {/* Right Column: Collage — the visual anchor */}
           <div className="flex-1 flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -99,48 +103,15 @@ export default function HistoricalArchives() {
               transition={{ duration: 0.5 }}
               className="max-w-lg w-full lg:ml-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
-                <h3 className="text-3xl font-semibold mb-5 text-white">
-                  {t.initiative.datasetTitle}
-                </h3>
-
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-4 mb-7">
-                  <div>
-                    <div className="text-2xl font-bold text-white">830K+</div>
-                    <div className="text-xs text-blue-200/70 uppercase tracking-wide">{t.stats.pages}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-white">800M+</div>
-                    <div className="text-xs text-blue-200/70 uppercase tracking-wide">{t.stats.tokens}</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-white">20</div>
-                    <div className="text-xs text-blue-200/70 uppercase tracking-wide">{t.stats.collections}</div>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="https://huggingface.co/datasets/ferjorosa/bne-hemeroteca-ocr-xix"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#FFD21E] text-gray-900 px-5 py-3 rounded-lg font-semibold hover:bg-[#FFF0B3] transition-colors text-sm"
-                  >
-                    <span role="img" aria-label={t.actions.datasetAriaLabel}>🤗</span>
-                    {t.actions.dataset}
-                  </a>
-                  <a
-                    href="https://github.com/ferjorosa/bne-hemeroteca-data"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#24292e] text-white px-5 py-3 rounded-lg font-semibold hover:bg-[#2f363d] transition-colors text-sm"
-                  >
-                    <Github className="w-4 h-4 flex-shrink-0" />
-                    {t.actions.code}
-                  </a>
-                </div>
-              </div>
+              <figure className="bg-white/5 backdrop-blur-sm rounded-3xl p-3 border border-white/10">
+                <Image
+                  src="/collage_bne.jpg"
+                  alt={t.collageAlt}
+                  width={1366}
+                  height={911}
+                  className="rounded-2xl w-full h-auto"
+                />
+              </figure>
             </motion.div>
           </div>
         </div>
@@ -153,7 +124,7 @@ export default function HistoricalArchives() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <button
-            onClick={scrollToExamples}
+            onClick={scrollToHowItWorks}
             className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer animate-bounce"
             aria-label={t.scrollAriaLabel}
           >
@@ -162,10 +133,50 @@ export default function HistoricalArchives() {
         </motion.div>
       </section>
 
+      {/* How it works */}
+      <section id="how-it-works" className="max-w-7xl mx-auto px-4 py-20 scroll-mt-16">
+        <h2 className="text-3xl md:text-4xl font-bold font-jost text-white mb-10 text-center">
+          {t.howItWorks.title}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {t.howItWorks.items.map((item, i) => {
+            const Icon = HOW_ICONS[i % HOW_ICONS.length];
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10"
+              >
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-[#147ca6]/20 border border-[#147ca6]/40 flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-[#5fc2e0]" />
+                  </div>
+                  <span className="text-4xl font-bold font-jost text-white/10">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+                <p className="text-blue-100/80 leading-relaxed text-sm">{item.body}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Interactive example */}
-      <section id="examples" className="max-w-7xl mx-auto px-4 py-8 min-h-[calc(100vh-64px)] scroll-mt-16 flex flex-col justify-center">
+      <section id="examples" className="max-w-7xl mx-auto px-4 py-8 scroll-mt-16 flex flex-col justify-center">
+        <h2 className="text-3xl md:text-4xl font-bold font-jost text-white mb-3 text-center">
+          {t.examplesTitle}
+        </h2>
+        <p className="text-blue-100/70 text-center max-w-2xl mx-auto mb-8">
+          {t.examplesHint}
+        </p>
+
         {/* Tabs */}
-        <div className="flex flex-wrap gap-2 mb-5">
+        <div className="flex flex-wrap gap-2 mb-5 justify-center">
           {examples.map((ex, i) => (
             <button
               key={ex.src}
@@ -211,6 +222,33 @@ export default function HistoricalArchives() {
             {t.imageSource}
           </a>
         </p>
+      </section>
+
+      {/* Call to action */}
+      <section id="work-with-us" className="max-w-7xl mx-auto px-4 py-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/10 p-10 md:p-14 text-center max-w-3xl mx-auto"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold font-jost text-white mb-4">
+            {t.cta.title}
+          </h2>
+          <p className="text-lg text-blue-100/80 mb-8 max-w-xl mx-auto">
+            {t.cta.body}
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href={`mailto:${t.cta.email}`}
+              className="inline-flex items-center gap-2 bg-[#FFD21E] text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-[#FFF0B3] transition-colors text-sm"
+            >
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              {t.cta.contact}
+            </a>
+          </div>
+        </motion.div>
       </section>
     </div>
   );
