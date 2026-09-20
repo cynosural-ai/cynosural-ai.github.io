@@ -25,7 +25,7 @@ export default async function BlogPage() {
                 className="relative block h-28 w-28 shrink-0 overflow-hidden transition-opacity hover:opacity-75"
                 aria-label={`Read ${post.title}`}
               >
-                <Constellation seed={post.slug} geometrySize={1.5} starSize={0.5} />
+                <Constellation seed={post.constellationSeed ?? post.slug} geometrySize={1.5} starSize={0.5} />
               </Link>
               <div>
                 <p className="text-sm text-blue-200/70 mb-2">{post.date}</p>
