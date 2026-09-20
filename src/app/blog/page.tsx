@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import { Constellation } from "@/components/Constellation";
 
 export const metadata = {
   title: "Blog | Cynosural AI Lab",
@@ -18,11 +19,22 @@ export default async function BlogPage() {
       <div className="space-y-8">
         {posts.map((post) => (
           <article key={post.slug} className="border-b border-white/10 pb-8">
-            <p className="text-sm text-blue-200/70 mb-2">{post.date}</p>
-            <h2 className="font-jost text-3xl text-white mb-3">
-              <Link href={`/blog/${post.slug}`} className="hover:text-[#209BD0]">{post.title}</Link>
-            </h2>
-            {post.description && <p className="text-lg text-blue-100/90 leading-relaxed">{post.description}</p>}
+            <div className="flex items-center gap-5 sm:gap-8">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="relative block h-28 w-28 shrink-0 overflow-hidden transition-opacity hover:opacity-75"
+                aria-label={`Read ${post.title}`}
+              >
+                <Constellation seed={post.constellationSeed ?? post.slug} geometrySize={1.5} starSize={0.5} />
+              </Link>
+              <div>
+                <p className="text-sm text-blue-200/70 mb-2">{post.date}</p>
+                <h2 className="font-jost text-3xl text-white mb-3">
+                  <Link href={`/blog/${post.slug}`} className="hover:text-[#209BD0]">{post.title}</Link>
+                </h2>
+                {post.description && <p className="text-lg text-blue-100/90 leading-relaxed">{post.description}</p>}
+              </div>
+            </div>
           </article>
         ))}
       </div>

@@ -2,6 +2,7 @@
 title: "Semantic Monte Carlo"
 date: "2026-08-14"
 description: "A short introduction to exploring meaning through probabilistic sampling"
+constellationSeed: "2"
 author: ["Alberto Sánchez", "Carlos Pujades", "Fernando Rodriguez"]
 links:
   - label: "Code"

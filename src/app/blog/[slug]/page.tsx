@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { Github } from "lucide-react";
 import { getPost, getPostSlugs, type PostLink } from "@/lib/posts";
+import { Constellation } from "@/components/Constellation";
 
 export const dynamicParams = false;
 
@@ -26,7 +27,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   return (
     <article className="min-h-screen text-white px-6 py-16 relative">
       <div className="fixed inset-0 -z-10 bg-gradient-to-b from-[#040a16] via-[#0a1f3d] to-[#0d2b4e]" aria-hidden />
-      <div className="max-w-3xl w-full mx-auto relative">
+      <div className="fixed inset-x-0 top-0 -z-10 h-[48vh] -translate-y-20 opacity-75" aria-hidden>
+        <Constellation seed={post.constellationSeed ?? post.slug} geometrySize={1.5} starSize={1.15} verticalJitter={28} />
+      </div>
+      <div className="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,4,10,0.42)_72%,rgba(2,4,10,0.78)_100%)]" aria-hidden />
+      <div className="max-w-3xl w-full mx-auto relative rounded-2xl border border-white/10 bg-[#030817]/45 px-6 py-8 shadow-2xl shadow-[#02040a]/30 backdrop-blur-[2px] sm:px-10">
         <p className="text-sm text-blue-200/70 mb-4">{post.date}</p>
         <h1 className="font-jost text-5xl mb-4">{post.title}</h1>
         {post.author && (
