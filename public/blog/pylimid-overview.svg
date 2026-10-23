@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="700" viewBox="0 0 1360 700" role="img" aria-labelledby="title desc">
+  <title id="title">How PyLIMID works</title>
+  <desc id="desc">Three panels connected from left to right. Your model defines chance variables as probability distributions, decisions as actions and available information, and utilities as payoff functions. PyLIMID simulates outcomes and optimizes decisions, using NumPyro and JAX. Results include a policy describing what to do given the available information and an estimate of the expected utility of following it.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#7CC7E8"/>
+    </marker>
+  </defs>
+  <rect width="1360" height="700" rx="24" fill="#0A1F3D"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="76" fill="#FFFFFF" font-size="36" font-weight="600">How PyLIMID works</text>
+
+    <g fill="#071528" stroke="#29415F" stroke-width="1.5">
+      <rect x="48" y="128" width="384" height="520" rx="16"/>
+      <rect x="488" y="128" width="384" height="520" rx="16"/>
+      <rect x="928" y="128" width="384" height="520" rx="16"/>
+    </g>
+    <g fill="#FFFFFF" font-size="26" font-weight="600">
+      <text x="80" y="180">Your model</text>
+      <text x="520" y="180">PyLIMID</text>
+      <text x="960" y="180">Results</text>
+    </g>
+    <g stroke="#29415F" stroke-width="1">
+      <path d="M80 204H400"/>
+      <path d="M520 204H840"/>
+      <path d="M960 204H1280"/>
+    </g>
+
+    <!-- The model's three node types. -->
+    <ellipse cx="117" cy="277" rx="37" ry="25" fill="#D6CCE9" stroke="#EEE8F7" stroke-width="1.5"/>
+    <rect x="82" y="372" width="70" height="50" rx="5" fill="#A9C6E2" stroke="#D2E4F4" stroke-width="1.5"/>
+    <path d="M117 487L157 517L117 547L77 517Z" fill="#D6E8F7" stroke="#EDF6FF" stroke-width="1.5"/>
+    <g font-size="22" font-weight="600">
+      <text x="180" y="270" fill="#D6CCE9">Chance</text>
+      <text x="180" y="390" fill="#A9C6E2">Decision</text>
+      <text x="180" y="510" fill="#D6E8F7">Utility</text>
+    </g>
+    <g fill="#C1D2E5" font-size="18">
+      <text x="180" y="301">Probability distributions</text>
+      <text x="180" y="421">Actions and information</text>
+      <text x="180" y="541">Payoff functions</text>
+    </g>
+    <text x="80" y="610" fill="#91A9C3" font-size="17">Defined in Python</text>
+
+    <!-- PyLIMID's computation. -->
+    <g fill="#102B49" stroke="#43678C" stroke-width="1.5">
+      <rect x="520" y="250" width="320" height="84" rx="10"/>
+      <rect x="520" y="398" width="320" height="84" rx="10"/>
+    </g>
+    <g fill="#E5F0FA" font-size="23" text-anchor="middle">
+      <text x="680" y="300">Simulate outcomes</text>
+      <text x="680" y="448">Optimize decisions</text>
+    </g>
+    <path d="M680 347V383" fill="none" stroke="#7CC7E8" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M520 536H840" stroke="#29415F" stroke-width="1"/>
+    <text x="680" y="583" fill="#C1D2E5" font-size="21" text-anchor="middle">NumPyro + JAX</text>
+    <text x="680" y="611" fill="#91A9C3" font-size="16" text-anchor="middle">Distributions and computation</text>
+
+    <!-- Returned results. -->
+    <g fill="#D6E8F7" font-size="24" font-weight="600">
+      <text x="960" y="277">Policy</text>
+      <text x="960" y="433">Expected utility</text>
+    </g>
+    <g fill="#C1D2E5" font-size="19">
+      <text x="960" y="314">What to do, given the</text>
+      <text x="960" y="343">information available</text>
+      <text x="960" y="470">Estimated value of</text>
+      <text x="960" y="499">following the policy</text>
+    </g>
+    <path d="M960 378H1280" stroke="#29415F" stroke-width="1"/>
+    <text x="960" y="610" fill="#91A9C3" font-size="17">Under your model’s assumptions</text>
+
+    <g fill="none" stroke="#7CC7E8" stroke-width="2" marker-end="url(#arrow)">
+      <path d="M440 377H478"/>
+      <path d="M880 377H918"/>
+    </g>
+  </g>
+</svg>
