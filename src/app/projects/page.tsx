@@ -2,7 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { useTranslation } from "@/i18n/LocaleProvider";
+import { useTranslation } from "@/i18n/dictionaries";
 
 export default function Projects() {
   const t = useTranslation("projects");

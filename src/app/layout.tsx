@@ -4,14 +4,11 @@ import "./globals.css";
 import "katex/dist/katex.min.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { LocaleProvider } from "@/i18n/LocaleProvider";
 import enCommon from "@/dictionaries/en/common.json";
 
 const inter = Inter({ subsets: ["latin"] });
 export const jost = Jost({ subsets: ["latin"], variable: "--font-jost" });
 
-// Build-time default metadata (default locale). The LocaleProvider updates the
-// document title/description at runtime once the user's locale is resolved.
 export const metadata: Metadata = {
   title: enCommon.metadata.title,
   description: enCommon.metadata.description,
@@ -33,7 +30,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${jost.variable}`}>
-        <LocaleProvider>
           {/* dvh (dynamic viewport height) instead of vh so on mobile the layout
               uses the actually-visible area, accounting for the browser's address
               bar. Without this the footer sits behind the address bar and needs a
@@ -46,7 +42,6 @@ export default function RootLayout({
             <main className="flex-grow flex flex-col min-h-0">{children}</main>
             <Footer />
           </div>
-        </LocaleProvider>
       </body>
     </html>
   );

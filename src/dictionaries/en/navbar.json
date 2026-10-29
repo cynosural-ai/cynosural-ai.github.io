@@ -1,8 +1,7 @@
 {
   "links": {
-    "historicalArchives": "Historical Archives",
-    "about": "About"
-    ,"blog": "Blog"
+    "about": "About",
+    "blog": "Blog"
   },
   "menu": {
     "toggle": "Open menu"

@@ -1,12 +1,12 @@
 "use client";
 
-import { useTranslation } from "@/i18n/LocaleProvider";
+import { useTranslation } from "@/i18n/dictionaries";
 
 export default function About() {
   const t = useTranslation("about");
 
   return (
-    <div className="min-h-screen">
+    <div lang="en" className="min-h-screen">
       {/* Full-viewport night sky: a fixed layer behind everything, so it also
           shows through the transparent navbar and footer instead of the white
           body background. */}
@@ -32,17 +32,12 @@ export default function About() {
             </p>
           </section>
 
-          {/* Goals Section */}
+          {/* Research Section */}
           <section>
-            <h2 className="text-sm font-semibold tracking-wider text-blue-200/60 uppercase mb-4">{t.goals.heading}</h2>
-            <ul className="text-lg text-blue-100/90 space-y-3 list-none pl-0">
-              {t.goals.items.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#7cc7e8] flex-shrink-0 leading-[1.75rem]">●</span>
-                  <span className="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="text-sm font-semibold tracking-wider text-blue-200/60 uppercase mb-4">{t.research.heading}</h2>
+            <p className="text-lg text-blue-100/90 leading-relaxed">
+              {t.research.body}
+            </p>
           </section>
 
           {/* Funding Section */}

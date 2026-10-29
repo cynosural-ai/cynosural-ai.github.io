@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { useTranslation } from "@/i18n/LocaleProvider";
-import LocaleSwitcher from "@/components/LocaleSwitcher";
+import { useTranslation } from "@/i18n/dictionaries";
 
 export default function Footer() {
   const t = useTranslation("footer");
@@ -57,7 +56,6 @@ export default function Footer() {
             >
               <span role="img" aria-label={t.resources.huggingFace}>🤗</span>
             </a>
-            <LocaleSwitcher onDark={isDark} ariaLabel={t.langToggle.selectLanguage} />
           </div>
         </div>
       </div>

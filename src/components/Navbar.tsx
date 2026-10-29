@@ -7,7 +7,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import clsx from "clsx";
-import { useTranslation } from "@/i18n/LocaleProvider";
+import { useTranslation } from "@/i18n/dictionaries";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,6 @@ export default function Navbar() {
 
   const navigation = [
     { name: t.links.blog, href: "/blog" },
-    { name: t.links.historicalArchives, href: "/historical-archives" },
     { name: t.links.about, href: "/about" },
   ];
 

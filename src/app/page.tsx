@@ -2,7 +2,7 @@
 
 import { motion, MotionConfig } from "framer-motion";
 import Image from "next/image";
-import { useTranslation } from "@/i18n/LocaleProvider";
+import { useTranslation } from "@/i18n/dictionaries";
 import PolarisSky from "@/components/PolarisSky";
 
 export default function Home() {

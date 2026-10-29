@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "@/i18n/LocaleProvider";
+import { useTranslation } from "@/i18n/dictionaries";
 
 type Block = {
   id: string;

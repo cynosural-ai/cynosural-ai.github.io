@@ -1,16 +1,13 @@
 {
   "title": "About",
-  "intro": "We are an independent AI research lab based in Madrid, Spain. Our work focuses on the development of open AI research projects that have a positive impact on society. We are currently focused on making Spanish historical archives more accessible.",
+  "intro": "We are an independent AI research lab based in Madrid, Spain. Our goal is to build and train agents that can reason, learn, and act in an uncertain world.",
   "vision": {
     "heading": "Our Vision",
-    "body": "We believe the best way to advance AI research is through openness. By releasing datasets, models, and code as open-source, people can use them, improve them, and push the field forward together."
+    "body": "We envision agents that can pursue long-term goals, adapt to changing circumstances, and evaluate how their actions affect themselves and others. We believe the best way to advance this research is through openness, sharing our code, models, and findings so others can build on them."
   },
-  "goals": {
-    "heading": "Our Goals",
-    "items": [
-      "Contribute to AI research through open datasets, tools, and models that serve the public good",
-      "Contribute to Spain's growing role in the global AI landscape"
-    ]
+  "research": {
+    "heading": "Our Research",
+    "body": "Our current work draws on probabilistic modeling and decision theory to develop tools for reasoning under uncertainty. Our broader research interests include reinforcement learning and multiagent systems. We are interested in how agents learn from experience, gather and exchange information, and coordinate their actions to make decisions over long time horizons."
   },
   "funding": {
     "heading": "Funding",
