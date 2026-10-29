@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <mask id="pylimid-mark-opening" maskUnits="userSpaceOnUse" x="0" y="0" width="128" height="128">
+      <rect width="128" height="128" fill="white" />
+      <circle cx="64" cy="64" r="30" fill="black" />
+    </mask>
+  </defs>
+  <rect x="12" y="12" width="104" height="104" rx="18" fill="#A9C6E2" mask="url(#pylimid-mark-opening)" />
+  <path d="M92 40L116 64L92 88L68 64Z" fill="#FFFFFF" />
+</svg>

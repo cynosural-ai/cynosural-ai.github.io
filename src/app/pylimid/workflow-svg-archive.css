@@ -1,0 +1,24 @@
+.workflow-mobile .workflow-connectors { display: none; }
+.workflow-carousel { scrollbar-width: none; }
+.workflow-carousel::-webkit-scrollbar { display: none; }
+.workflow-eyebrow, .workflow-step {
+  fill: #7cc7e8;
+  font: 600 11px var(--font-jost), sans-serif;
+  letter-spacing: .13em;
+}
+.workflow-subtitle {
+  fill: #dcecfb;
+  font: 500 17px var(--font-jost), sans-serif;
+}
+.workflow-title {
+  fill: #fff;
+  font: 600 18px var(--font-jost), sans-serif;
+}
+.workflow-caption, .workflow-footnote {
+  fill: #a9c6e2;
+  font: 12px var(--font-jost), sans-serif;
+}
+.workflow-footnote { fill-opacity: .6; }
+.workflow-graph-line { fill: none; stroke: #7cc7e8; stroke-opacity: .45; stroke-width: 1.5; }
+.workflow-policy { fill: none; stroke: #7cc7e8; stroke-width: 2.5; stroke-linecap: round; }
+.workflow-flow { fill: none; stroke: #a5e6ff; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 2 12; }

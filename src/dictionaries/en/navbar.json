@@ -1,7 +1,8 @@
 {
   "links": {
     "about": "About",
-    "blog": "Blog"
+    "blog": "Blog",
+    "pylimid": "PyLIMID"
   },
   "menu": {
     "toggle": "Open menu"

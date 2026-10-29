@@ -12,6 +12,7 @@ export default function Footer() {
   const isDark =
     isHome ||
     pathname === "/about" ||
+    pathname === "/pylimid" ||
     pathname === "/historical-archives" ||
     pathname === "/blog" ||
     pathname.startsWith("/blog/");
