@@ -30,7 +30,7 @@ export default function PyLIMIDPage() {
       <ArticleLayout sidebar={<ReadmeSidebar />}>
         <header className="readme-intro">
           <h1><Image src="/pylimid/pylimid-mark.svg" alt="" width={58} height={58} priority />PyLIMID</h1>
-          <p className="readme-description"><a href="https://github.com/cynosural-ai/pylimid">PyLIMID</a> is a Python library built on NumPyro and JAX for building and solving <strong>limited-memory influence diagrams</strong>. Chance nodes can be discrete, continuous, or both in the same model. Combine them with decisions and utility functions, then fit policies to maximize expected utility.</p>
+          <p className="readme-description"><a href="https://github.com/cynosural-ai/pylimid">PyLIMID</a> is a Python library for building and solving <strong>limited-memory influence diagrams</strong>. Chance nodes can be discrete, continuous, or both in the same model. Combine them with decisions and utility functions, then fit policies to maximize expected utility.</p>
         </header>
 
         <section id="installation" className="readme-section readme-install" aria-labelledby="install-title">
@@ -91,7 +91,7 @@ export default function PyLIMIDPage() {
             <figcaption>Fitted policies from the quickstart. Order distributions are shown with the promotion running.</figcaption>
           </figure>
           <p>The estimated expected profit is about <strong>$542.6 per day</strong>. Both fitted policies remain stochastic. Results are approximate, and training does not guarantee the optimal policy.</p>
-          <a className="readme-text-link" href={`${docs}/getting_started/quickstart.html#adding-a-bayesian-prior`}>The quickstart adds a Bayesian prior for a busier season <ArrowRight size={16} aria-hidden /></a>
+          <a className="readme-text-link" href={`${docs}/getting_started/quickstart.html#adding-a-bayesian-prior`}>Continue this example and explore more in the documentation, where the next step adds a Bayesian prior for a busier season <ArrowRight size={16} aria-hidden /></a>
         </section>
 
         <section id="next-steps" className="readme-section readme-next" aria-labelledby="next-title">
