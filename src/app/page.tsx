@@ -16,8 +16,8 @@ export default function Home() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const skyOpacity = useTransform(scrollYProgress, [0, 0.75, 1], [1, 0.15, 0]);
-  const titleOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
+  const skyOpacity = useTransform(scrollYProgress, [0, 0.25, 0.45], [1, 0.12, 0]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
   const titleY = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   return (
