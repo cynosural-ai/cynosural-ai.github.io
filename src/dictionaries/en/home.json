@@ -2,5 +2,13 @@
   "hero": {
     "title": "Cynosural",
     "subtitle": "AI Research from Spain"
+  },
+  "story": {
+    "heading": "About Cynosural",
+    "intro": "Cynosural is an independent AI research lab based in Madrid, Spain. We build and train agents that can reason, learn, and act in an uncertain world. Our goal is to develop agents that can pursue long-term goals, adapt to changing circumstances, and evaluate how their actions affect themselves and others.",
+    "research": "Our current work draws on probabilistic modeling and decision theory to develop tools for reasoning under uncertainty. Our broader interests include reinforcement learning and multiagent systems, with a focus on how agents learn from experience, gather and exchange information, and coordinate their decisions over long time horizons.",
+    "approach": "We believe in advancing this research through openness, sharing code, models, and findings so others can build on them. We are currently self-funded, using our own resources to develop the lab and its research.",
+    "linksLabel": "Explore our work",
+    "blogLink": "Read the blog"
   }
 }

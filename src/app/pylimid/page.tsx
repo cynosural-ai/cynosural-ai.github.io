@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import CodeBlock from "./CodeBlock";
@@ -102,7 +103,7 @@ export default function PyLIMIDPage() {
               <a href={`${docs}/user_guide/building_a_diagram.html`}><span><strong>User guide</strong><span>Explains each part of the model in depth.</span></span><ArrowUpRight size={20} aria-hidden /></a>
               <a href={`${docs}/api/index.html`}><span><strong>API reference</strong><span>Reference for the model classes and functions.</span></span><ArrowUpRight size={20} aria-hidden /></a>
             </div>
-            <p className="readme-project-note">Open source under the <a href={`${repository}/blob/main/LICENSE.md`}>Apache 2.0 license</a>. Built by <a href="/about">Cynosural AI Lab</a>. <a href={`${repository}/blob/main/CONTRIBUTING.md`}>Contributions welcome <ArrowUpRight size={12} aria-hidden /></a></p>
+            <p className="readme-project-note">Open source under the <a href={`${repository}/blob/main/LICENSE.md`}>Apache 2.0 license</a>. Built by <Link href="/#about">Cynosural AI Lab</Link>. <a href={`${repository}/blob/main/CONTRIBUTING.md`}>Contributions welcome <ArrowUpRight size={12} aria-hidden /></a></p>
           </section>
         </article>
       </div>
