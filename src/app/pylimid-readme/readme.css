@@ -1,3 +1,7 @@
+body:has(.pylimid-readme) {
+  background: linear-gradient(180deg, #040a16 0%, #0a1f3d 42rem, #0d2b4e 100%);
+}
+
 .pylimid-readme {
   --readme-ink: #fff;
   --readme-body: #dcecfb;
@@ -7,7 +11,6 @@
   position: relative;
   isolation: isolate;
   min-height: 100vh;
-  background: linear-gradient(180deg, #040a16 0%, #0a1f3d 42rem, #0d2b4e 100%);
   color: var(--readme-body);
   font-size: 16px;
   line-height: 1.8;
@@ -28,6 +31,7 @@
 .readme-sidebar p { margin: 0 0 5px; font-weight: 600; color: var(--readme-ink); }
 .readme-sidebar a { color: #a9c6e2; transition: color 150ms; }
 .readme-sidebar a:hover { color: var(--readme-link); text-decoration: underline; }
+.readme-sidebar a[aria-current="location"] { color: var(--readme-link); font-weight: 600; text-decoration: underline; text-decoration-color: var(--readme-link); text-decoration-thickness: 1px; text-underline-offset: 5px; }
 .readme-sidebar .readme-sidebar-source { display: inline-flex; align-items: center; gap: 7px; margin-top: 17px; }
 .readme-intro h1 { display: flex; align-items: center; justify-content: center; gap: 17px; margin: 0 0 28px; font-size: clamp(48px, 5vw, 64px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.1; }
 .readme-intro h1 img { flex-shrink: 0; }
@@ -39,15 +43,12 @@
 .readme-intro-links a:hover { text-decoration: underline; }
 .readme-intro-links .readme-primary-link { padding: 9px 15px; border-radius: 6px; background: #7cc7e8; color: #06172a; }
 .readme-intro-links .readme-primary-link:hover { background: #a9ddf1; text-decoration: none; }
-.readme-install { margin-top: 42px; scroll-margin-top: 112px; }
-.readme-install h2 { margin: 0 0 12px; font-size: 19px; font-weight: 500; }
 .readme-install-command { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid var(--readme-rule); border-radius: 8px; padding: 13px 18px; background: rgb(4 10 22 / 80%); }
 .readme-install-command > code { color: #dcecfb; font-size: 15px; }
 .readme-install-command > code > span { color: #7cc7e8; user-select: none; }
-.readme-install > p { margin: 0 0 12px; color: var(--readme-muted); font-size: 12px; }
-.readme-small-link { display: inline; color: var(--readme-link); font-size: 12px; }
-.readme-small-link svg { display: inline; vertical-align: middle; }
-.readme-small-link:hover { text-decoration: underline; }
+.readme-install-link { display: inline; color: var(--readme-link); }
+.readme-install-link svg { display: inline; vertical-align: middle; }
+.readme-install-link:hover { text-decoration: underline; }
 .readme-section { margin-top: 68px; scroll-margin-top: 112px; }
 .readme-section h2 { margin: 0 0 16px; font-size: clamp(28px, 3vw, 34px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.25; text-wrap: balance; }
 .readme-section > p { margin: 0 0 16px; }
@@ -149,7 +150,6 @@
   .readme-install-command .readme-copy { min-height: 32px; padding: 4px; }
   .readme-install-command .readme-copy > span { display: none; }
   .readme-install-command > code { font-size: 14px; }
-  .readme-install > p { font-size: 11px; }
   .readme-setup summary > span { display: none; }
   .readme-code-toolbar { padding-inline: 14px; gap: 12px; }
   .readme-code-toolbar .readme-copy > span { display: none; }

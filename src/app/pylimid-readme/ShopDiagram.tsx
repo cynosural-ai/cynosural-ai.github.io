@@ -34,11 +34,11 @@ export default function ShopDiagram() {
             <text x="620" y="160">profit</text>
           </g>
           <g className="readme-graph-notes" textAnchor="middle">
-            <text x="110" y="122">Evening · skip or run</text>
-            <text x="370" y="122">Morning · 0–40 kg</text>
-            <text x="110" y="283">Cloudy or sunny</text>
+            <text x="110" y="122">skip / run</text>
+            <text x="370" y="122">0-40 kg</text>
+            <text x="110" y="283">Cloudy / sunny</text>
             <text x="370" y="283">Uncertain quantity</text>
-            <text x="620" y="226">Revenue − costs</text>
+            <text x="620" y="226">Revenue - costs</text>
           </g>
         </svg>
       </div>

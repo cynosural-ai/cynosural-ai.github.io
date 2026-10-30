@@ -1,8 +1,9 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { ArrowDown, ArrowRight, ArrowUpRight, Github } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import CodeBlock from "./CodeBlock";
 import CopyButton from "./CopyButton";
+import ReadmeSidebar from "./ReadmeSidebar";
 import ShopDiagram from "./ShopDiagram";
 import { functionsCode, modelCode, setupCode, solveCode } from "./example";
 import "./readme.css";
@@ -14,34 +15,18 @@ export const metadata: Metadata = {
 
 const docs = "https://pylimid.readthedocs.io/en/latest";
 const repository = "https://github.com/cynosural-ai/pylimid";
-const contents = [
-  ["installation", "Installation"],
-  ["features", "Features"],
-  ["example", "Example"],
-  ["results", "Fitted policies"],
-  ["next-steps", "Documentation"],
-];
-
 const features: { title: string; body: string; code?: string }[] = [
   { title: "Flexible distributions", body: "Combine discrete and continuous chance nodes in one model. Describe uncertainty with NumPyro distributions whose parameters depend on their parents.", code: "dist.Gamma(concentration=4.0, rate=4.0 / mean)" },
   { title: "Bayesian priors", body: "Express uncertainty about the model itself. Give unknown parameters prior distributions, then update beliefs from observations.", code: "dist.LogNormal(loc, scale)" },
   { title: "Utilities as functions", body: "Write utilities with JAX. Express costs, thresholds, nonlinear returns, and risk preferences directly as functions of the model’s variables.", code: "revenue - stock_cost - promotion_cost" },
   { title: "Discrete and continuous decisions", body: "Choose between named actions or a scalar quantity. Policy gradients jointly fit the decision rules within the policy families you declare.", code: "TabularSoftmax() · DistributionPolicy(...)" },
-  { title: "Explicit information and memory", body: "Specify what each decision knows when it acts. A decision’s parents define the observations and earlier choices its policy can use.", code: 'parents=("weather", "promotion")' },
-  { title: "Mixed inference", body: "Simulate outcomes, condition on observations, and estimate expected utilities. Posterior inference combines discrete enumeration and continuous sampling." },
 ];
 
 export default function PyLIMIDReadmePage() {
   return (
     <div className="pylimid-readme">
       <div className="readme-layout">
-        <aside className="readme-sidebar">
-          <nav aria-label="On this page">
-            <p>On this page</p>
-            {contents.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
-            <a className="readme-sidebar-source" href={repository}><Github size={14} aria-hidden /> Source code <ArrowUpRight size={12} aria-hidden /></a>
-          </nav>
-        </aside>
+        <ReadmeSidebar />
 
         <article className="readme-article">
           <header className="readme-intro">
@@ -49,9 +34,9 @@ export default function PyLIMIDReadmePage() {
             <p className="readme-description"><a href="https://github.com/cynosural-ai/pylimid">PyLIMID</a> is a Python library built on NumPyro and JAX for building and solving <strong>limited-memory influence diagrams</strong>. Chance nodes can be discrete, continuous, or both in the same model. Combine them with decisions and utility functions, then fit policies to maximize expected utility.</p>
           </header>
 
-          <section id="installation" className="readme-install" aria-labelledby="install-title">
+          <section id="installation" className="readme-section readme-install" aria-labelledby="install-title">
             <h2 id="install-title">Installation</h2>
-            <p>Python 3.12 · CPU by default · For NVIDIA GPUs on Linux, see the <a className="readme-small-link" href={`${docs}/getting_started/installation.html`}>CUDA installation options <ArrowUpRight size={13} aria-hidden /></a>.</p>
+            <p>Install PyLIMID with the following command in a Python 3.12 environment. The default installation uses the CPU. To run on an NVIDIA GPU on Linux, follow the <a className="readme-install-link" href={`${docs}/getting_started/installation.html`}>CUDA installation instructions <ArrowUpRight size={13} aria-hidden /></a>.</p>
             <div className="readme-install-command"><code><span aria-hidden>$ </span>pip install pylimid</code><CopyButton value="pip install pylimid" label="Copy install command" /></div>
           </section>
 
