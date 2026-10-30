@@ -5,7 +5,7 @@ description: "A Python library for modeling decisions under uncertainty with lim
 author: "Fernando Rodriguez"
 href: "/pylimid"
 links:
-  - label: "GitHub"
+  - label: "Source Code"
     url: "https://github.com/cynosural-ai/pylimid"
     icon: "github"
 ---

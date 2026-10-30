@@ -5,15 +5,13 @@ description: "A short introduction to exploring meaning through probabilistic sa
 constellationSeed: "2"
 author: ["Alberto Sánchez", "Carlos Pujades", "Fernando Rodriguez"]
 links:
-  - label: "Code"
+  - label: "Source Code"
     url: "https://github.com/cynosural-ai/semantic-montecarlo"
     icon: "github"
   - label: "Dataset"
     url: "https://huggingface.co/datasets/cynosural/semantic-montecarlo-benchmark"
     icon: "huggingface"
 ---
-
-# Abstract
 
 Current internet search agents perform well on determinate numerical questions whose answers already exist in published sources, but are less useful for non-determinate questions whose correct values are unknown. We introduce Semantic Monte Carlo, which generates $n$ paraphrased variants of a numerical question, queries them with multiple search agents, and combines their answers using confidence-weighted bootstrapping. This produces a distribution over plausible values rather than a single estimate.
 
