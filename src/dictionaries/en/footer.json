@@ -2,8 +2,5 @@
   "resources": {
     "github": "GitHub",
     "huggingFace": "Hugging Face"
-  },
-  "langToggle": {
-    "selectLanguage": "Select language"
   }
 }

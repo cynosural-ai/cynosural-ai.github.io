@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowDown, ScanText, FileCode2, Gauge, Mail } from "lucide-react";
 import OcrExampleViewer from "@/components/OcrExampleViewer";
-import { useTranslation } from "@/i18n/LocaleProvider";
+import { useTranslation } from "@/i18n/dictionaries";
 
 type OcrData = {
   image: string;

@@ -7,6 +7,7 @@ import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype";
 import rehypeKatex from "rehype-katex";
 import rehypeStringify from "rehype-stringify";
+import { articleHeadings, type ArticleHeading } from "./article-headings";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -23,8 +24,10 @@ export type Post = {
   author?: string;
   description?: string;
   constellationSeed?: string;
+  href?: string;
   links?: PostLink[];
   content: string;
+  headings: ArticleHeading[];
 };
 
 export function getPostSlugs() {
@@ -34,11 +37,13 @@ export function getPostSlugs() {
 export async function getPost(slug: string): Promise<Post> {
   const source = fs.readFileSync(path.join(postsDirectory, `${slug}.md`), "utf8");
   const { data, content } = matter(source);
+  const headings: ArticleHeading[] = [];
   const html = String(
     await unified()
       .use(remarkParse)
       .use(remarkMath)
       .use(remarkRehype, { allowDangerousHtml: true })
+      .use(articleHeadings(headings))
       .use(rehypeKatex)
       .use(rehypeStringify)
       .process(content)
@@ -55,6 +60,7 @@ export async function getPost(slug: string): Promise<Post> {
       : undefined,
     description: data.description ? String(data.description) : undefined,
     constellationSeed: data.constellationSeed ? String(data.constellationSeed) : undefined,
+    href: data.href ? String(data.href) : undefined,
     links: Array.isArray(data.links)
       ? data.links.map((l: Record<string, unknown>) => ({
           label: String(l.label),
@@ -63,6 +69,7 @@ export async function getPost(slug: string): Promise<Post> {
         }))
       : undefined,
     content: html,
+    headings,
   };
 }
 

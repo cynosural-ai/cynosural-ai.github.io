@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { useTranslation } from "@/i18n/LocaleProvider";
-import LocaleSwitcher from "@/components/LocaleSwitcher";
+import { useTranslation } from "@/i18n/dictionaries";
 
 export default function Footer() {
   const t = useTranslation("footer");
@@ -12,7 +11,7 @@ export default function Footer() {
   const isHome = pathname === "/";
   const isDark =
     isHome ||
-    pathname === "/about" ||
+    pathname === "/pylimid" ||
     pathname === "/historical-archives" ||
     pathname === "/blog" ||
     pathname.startsWith("/blog/");
@@ -46,7 +45,13 @@ export default function Footer() {
               className={isDark ? "text-white" : "text-gray-900"}
               aria-label={t.resources.github}
             >
-              <Image src="/github.svg" alt="" width={14} height={14} className="flex-shrink-0" />
+              <Image
+                src="/github.svg"
+                alt=""
+                width={14}
+                height={14}
+                className={clsx("flex-shrink-0", pathname === "/pylimid" && "invert")}
+              />
             </a>
             <a
               href="https://huggingface.co/cynosural"
@@ -57,7 +62,6 @@ export default function Footer() {
             >
               <span role="img" aria-label={t.resources.huggingFace}>🤗</span>
             </a>
-            <LocaleSwitcher onDark={isDark} ariaLabel={t.langToggle.selectLanguage} />
           </div>
         </div>
       </div>

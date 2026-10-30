@@ -1,0 +1,20 @@
+.blog-post-header { margin-bottom: 48px; }
+.blog-post-header h1 { margin: 0 0 20px; color: #fff; font-family: var(--font-jost), sans-serif; font-size: clamp(36px, 5vw, 64px); font-weight: 500; line-height: 1.1; letter-spacing: -0.035em; text-wrap: balance; }
+.blog-post-date, .blog-post-author { color: #a9c6e2; font-size: 13px; }
+.blog-post-date { margin: 0 0 16px; }
+.blog-post-author { margin: 0; }
+.blog-post .markdown { color: #dcecfb; font-size: 16px; line-height: 1.8; overflow-wrap: anywhere; }
+.blog-post .markdown :is(h2, h3, h4, h5, h6) { scroll-margin-top: 112px; }
+.blog-post .markdown h2 { margin: 68px 0 16px; font-size: clamp(28px, 3vw, 34px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.25; text-wrap: balance; }
+.blog-post .markdown > h2:first-child { margin-top: 0; }
+.blog-post .markdown h3 { margin: 34px 0 12px; font-size: 23px; font-weight: 500; }
+.blog-post .markdown strong { color: #fff; font-weight: 600; }
+.blog-post .markdown img { width: 100%; height: auto; margin: 28px 0; border-radius: 0; }
+.blog-post .markdown .katex-display { overflow-x: auto; overflow-y: hidden; padding: 8px 0; }
+.blog-post .markdown pre { background: #07182d; font-size: 13px; }
+.blog-post .markdown :is(pre, .katex-display) { scrollbar-width: thin; scrollbar-color: #607b9b #07182d; }
+
+@media (max-width: 800px) {
+  .blog-post-header { margin-bottom: 36px; }
+  .blog-post .markdown h2 { margin-top: 50px; }
+}

@@ -3,8 +3,9 @@ title: "Introducing PyLIMID"
 date: "2026-10-22"
 description: "A Python library for modeling decisions under uncertainty with limited-memory influence diagrams"
 author: "Fernando Rodriguez"
+href: "/pylimid"
 links:
-  - label: "GitHub"
+  - label: "Source Code"
     url: "https://github.com/cynosural-ai/pylimid"
     icon: "github"
 ---
