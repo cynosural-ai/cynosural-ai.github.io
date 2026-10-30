@@ -1,7 +1,7 @@
 """Recreate the PyLIMID quickstart's fitted-policy figure in the navy theme.
 
 Run with ``MPLCONFIGDIR=/private/tmp/pylimid-matplotlib-cache
-.venv/bin/python src/app/pylimid-readme/plot_policy.py`` from the website repo.
+.venv/bin/python src/app/pylimid/plot_policy.py`` from the website repo.
 The displayed probabilities, means, bounds, and scale match the quickstart.
 """
 
@@ -104,7 +104,7 @@ def main() -> None:
         axes.grid(axis="y", color=GRID, alpha=0.24)
         axes.tick_params(length=0, pad=7)
 
-    output = Path("public/pylimid-readme/order_policy.png")
+    output = Path("public/pylimid/order_policy.png")
     figure.savefig(output, dpi=200, transparent=True)
     plt.close(figure)
     print(f"Saved {output}")

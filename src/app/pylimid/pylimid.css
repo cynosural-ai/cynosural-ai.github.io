@@ -65,18 +65,18 @@ body:has(.pylimid-readme) {
 .readme-stack-logos a:hover { opacity: 0.8; }
 .readme-stack-logos img { display: block; }
 .readme-example { padding-top: 42px; border-top: 1px solid var(--readme-rule); margin-top: 42px; }
-.readme-diagram { margin: 28px 0 20px; padding: 20px 20px 16px; border-radius: 10px; background: #07182d; }
+.readme-diagram { margin: 28px 0 20px; }
 .readme-diagram-scroll { overflow-x: auto; }
 .readme-diagram svg { display: block; width: 100%; min-width: 560px; height: auto; }
-.readme-graph-edges { fill: none; stroke: #7d97ac; color: #7d97ac; stroke-width: 1.4px; }
-.readme-graph-decision { fill: #102e4c; stroke: #7cc7e8; stroke-width: 1.4px; }
-.readme-graph-chance { fill: #102e4c; stroke: #7cc7e8; stroke-width: 1.4px; }
+.readme-graph-edges { fill: none; stroke: #8faec7; color: #8faec7; stroke-width: 1.4px; }
+.readme-graph-decision { fill: #123a5c; stroke: #7cc7e8; stroke-width: 1.4px; }
+.readme-graph-chance { fill: #123a5c; stroke: #7cc7e8; stroke-width: 1.4px; }
 .readme-graph-utility { fill: #293735; stroke: #e5ce8e; stroke-width: 1.4px; }
 .readme-graph-labels { fill: #dcecfb; font-size: 17px; font-weight: 500; font-family: var(--font-jost), sans-serif; }
 .readme-graph-notes { fill: #a9c6e2; font-size: 11px; }
-.readme-diagram figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 24px; margin-top: 14px; color: #a9c6e2; font-size: 11px; }
+.readme-diagram figcaption { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 24px; width: fit-content; margin: 14px auto 0; padding: 9px 16px; border-radius: 8px; background: #07182d; color: #a9c6e2; font-size: 11px; }
 .readme-diagram figcaption > span { display: inline-flex; align-items: center; gap: 7px; }
-.readme-legend-line { display: inline-block; width: 23px; border-top: 1px solid #607e95; }
+.readme-legend-line { display: inline-block; width: 23px; border-top: 1px solid #8faec7; }
 .readme-legend-dashed { border-top-style: dashed; }
 .readme-example .readme-model-note { font-size: 14px; color: var(--readme-muted); }
 .readme-copy-control { display: inline-flex; flex-direction: column; align-items: flex-start; }
@@ -136,7 +136,6 @@ body:has(.pylimid-readme) {
   .readme-section { margin-top: 50px; }
   .readme-stack { margin-top: 44px; }
   .readme-example { margin-top: 24px; padding-top: 32px; }
-  .readme-diagram { padding: 14px 10px; }
 }
 
 @media (max-width: 560px) {
@@ -154,6 +153,6 @@ body:has(.pylimid-readme) {
   .readme-code-toolbar { padding-inline: 14px; gap: 12px; }
   .readme-code-toolbar .readme-copy > span { display: none; }
   .readme-code-block pre { padding: 17px 14px; font-size: 11px; }
-  .readme-diagram figcaption { justify-content: flex-start; padding-inline: 5px; font-size: 10px; gap: 7px 16px; }
+  .readme-diagram figcaption { justify-content: flex-start; padding-inline: 12px; font-size: 10px; gap: 7px 16px; }
   .readme-section h2 { font-size: 29px; }
 }

@@ -12,7 +12,7 @@ export default function Footer() {
   const isDark =
     isHome ||
     pathname === "/about" ||
-    pathname === "/pylimid-readme" ||
+    pathname === "/pylimid" ||
     pathname === "/historical-archives" ||
     pathname === "/blog" ||
     pathname.startsWith("/blog/");
@@ -51,7 +51,7 @@ export default function Footer() {
                 alt=""
                 width={14}
                 height={14}
-                className={clsx("flex-shrink-0", pathname === "/pylimid-readme" && "invert")}
+                className={clsx("flex-shrink-0", pathname === "/pylimid" && "invert")}
               />
             </a>
             <a

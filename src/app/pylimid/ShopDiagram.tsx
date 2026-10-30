@@ -2,7 +2,7 @@ export default function ShopDiagram() {
   return (
     <figure className="readme-diagram">
       <div className="readme-diagram-scroll" tabIndex={0} role="region" aria-label="Ice cream shop influence diagram. Scroll horizontally on small screens.">
-        <svg viewBox="0 0 760 300" role="img" aria-labelledby="shop-diagram-title shop-diagram-description">
+        <svg viewBox="0 -10 760 310" role="img" aria-labelledby="shop-diagram-title shop-diagram-description">
           <title id="shop-diagram-title">Ice cream shop influence diagram</title>
           <desc id="shop-diagram-description">Promotion is chosen before the weather is known. Order observes weather and remembers promotion. Demand depends on weather and promotion. Profit depends on promotion, order, and demand. Dashed arrows show information available to the order decision.</desc>
           <defs>

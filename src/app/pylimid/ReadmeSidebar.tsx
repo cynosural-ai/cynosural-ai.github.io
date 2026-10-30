@@ -7,7 +7,6 @@ const contents = [
   ["installation", "Installation"],
   ["features", "Features"],
   ["example", "Example"],
-  ["results", "Fitted policies"],
   ["next-steps", "Documentation"],
 ] as const;
 

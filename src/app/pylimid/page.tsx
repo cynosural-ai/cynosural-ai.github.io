@@ -6,7 +6,7 @@ import CopyButton from "./CopyButton";
 import ReadmeSidebar from "./ReadmeSidebar";
 import ShopDiagram from "./ShopDiagram";
 import { functionsCode, modelCode, setupCode, solveCode } from "./example";
-import "./readme.css";
+import "./pylimid.css";
 
 export const metadata: Metadata = {
   title: "PyLIMID: limited-memory influence diagrams in Python | Cynosural AI Lab",
@@ -18,11 +18,11 @@ const repository = "https://github.com/cynosural-ai/pylimid";
 const features: { title: string; body: string; code?: string }[] = [
   { title: "Flexible distributions", body: "Combine discrete and continuous chance nodes in one model. Describe uncertainty with NumPyro distributions whose parameters depend on their parents.", code: "dist.Gamma(concentration=4.0, rate=4.0 / mean)" },
   { title: "Bayesian priors", body: "Express uncertainty about the model itself. Give unknown parameters prior distributions, then update beliefs from observations.", code: "dist.LogNormal(loc, scale)" },
-  { title: "Utilities as functions", body: "Write utilities with JAX. Express costs, thresholds, nonlinear returns, and risk preferences directly as functions of the model’s variables.", code: "revenue - stock_cost - promotion_cost" },
+  { title: "Utilities as functions", body: "Write utilities with JAX. Express costs, thresholds, nonlinear returns, and risk preferences directly as functions of the model's variables.", code: "revenue - stock_cost - promotion_cost" },
   { title: "Discrete and continuous decisions", body: "Choose between named actions or a scalar quantity. Policy gradients jointly fit the decision rules within the policy families you declare.", code: "TabularSoftmax() · DistributionPolicy(...)" },
 ];
 
-export default function PyLIMIDReadmePage() {
+export default function PyLIMIDPage() {
   return (
     <div className="pylimid-readme">
       <div className="readme-layout">
@@ -68,7 +68,6 @@ export default function PyLIMIDReadmePage() {
 
             <p>The problem can be modeled with the following influence diagram.</p>
             <ShopDiagram />
-            <p className="readme-model-note">A decision’s parents are what it knows when it acts. The promotion has no parents. The order observes the weather and remembers whether the promotion is running.</p>
             <p>The shop is a small example. The same node types and policy families apply to other sequential decisions where the available information and objective can be written down.</p>
 
             <h3>Define uncertainty and profit</h3>
@@ -83,14 +82,12 @@ export default function PyLIMIDReadmePage() {
             <h3>Fit the policies</h3>
             <p>Fit both policies together, then inspect their estimated expected utility.</p>
             <CodeBlock source={solveCode} title="Solve" />
-          </section>
 
-          <section id="results" className="readme-section readme-results" aria-labelledby="results-title">
-            <h2 id="results-title">Fitted policies</h2>
+            <h3 id="results-title">Fitted policies</h3>
             <p>In this quickstart run, the fitted promotion policy puts more than 99.9% probability on running the promotion. When it runs, mean orders are about <strong>7.2 kg on cloudy days</strong> and <strong>21.0 kg on sunny days</strong>.</p>
             <figure className="readme-policy-figure">
               <div className="readme-policy-scroll" tabIndex={0} role="region" aria-label="Fitted promotion and order policies. Scroll horizontally on small screens.">
-                <Image src="/pylimid-readme/order_policy.png" alt="The promotion is run with 99.972% probability. When it runs, order distributions have means of 7.2 kilograms on cloudy days and 21.0 kilograms on sunny days." width={2000} height={760} sizes="(max-width: 700px) 650px, 880px" />
+                <Image src="/pylimid/order_policy.png" alt="The promotion is run with 99.972% probability. When it runs, order distributions have means of 7.2 kilograms on cloudy days and 21.0 kilograms on sunny days." width={2000} height={760} sizes="(max-width: 700px) 650px, 880px" />
               </div>
               <figcaption>Fitted policies from the quickstart. Order distributions are shown with the promotion running.</figcaption>
             </figure>
