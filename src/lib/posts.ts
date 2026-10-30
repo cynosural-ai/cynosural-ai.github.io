@@ -23,6 +23,7 @@ export type Post = {
   author?: string;
   description?: string;
   constellationSeed?: string;
+  href?: string;
   links?: PostLink[];
   content: string;
 };
@@ -55,6 +56,7 @@ export async function getPost(slug: string): Promise<Post> {
       : undefined,
     description: data.description ? String(data.description) : undefined,
     constellationSeed: data.constellationSeed ? String(data.constellationSeed) : undefined,
+    href: data.href ? String(data.href) : undefined,
     links: Array.isArray(data.links)
       ? data.links.map((l: Record<string, unknown>) => ({
           label: String(l.label),
