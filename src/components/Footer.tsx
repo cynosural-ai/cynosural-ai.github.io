@@ -12,7 +12,7 @@ export default function Footer() {
   const isDark =
     isHome ||
     pathname === "/about" ||
-    pathname === "/pylimid" ||
+    pathname === "/pylimid-readme" ||
     pathname === "/historical-archives" ||
     pathname === "/blog" ||
     pathname.startsWith("/blog/");
@@ -46,7 +46,13 @@ export default function Footer() {
               className={isDark ? "text-white" : "text-gray-900"}
               aria-label={t.resources.github}
             >
-              <Image src="/github.svg" alt="" width={14} height={14} className="flex-shrink-0" />
+              <Image
+                src="/github.svg"
+                alt=""
+                width={14}
+                height={14}
+                className={clsx("flex-shrink-0", pathname === "/pylimid-readme" && "invert")}
+              />
             </a>
             <a
               href="https://huggingface.co/cynosural"

@@ -13,11 +13,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isDark = isHome || pathname === "/about" || pathname === "/pylimid" || pathname === "/historical-archives" || pathname.startsWith("/blog");
+  const isDark = isHome || pathname === "/about" || pathname === "/pylimid-readme" || pathname === "/historical-archives" || pathname.startsWith("/blog");
   const t = useTranslation("navbar");
 
   const navigation = [
-    { name: t.links.pylimid, href: "/pylimid" },
+    { name: t.links.pylimidReadme, href: "/pylimid-readme" },
     { name: t.links.blog, href: "/blog" },
     { name: t.links.about, href: "/about" },
   ];
@@ -62,8 +62,9 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
+                aria-current={pathname === item.href ? "page" : undefined}
                 className={clsx(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors aria-[current=page]:underline aria-[current=page]:underline-offset-4",
                   isDark
                     ? "text-white/70 hover:text-white"
                     : "text-gray-600 hover:text-[#209BD0]"
@@ -136,8 +137,9 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  aria-current={pathname === item.href ? "page" : undefined}
                   className={clsx(
-                    "block px-4 py-3 rounded-md text-xl font-medium",
+                    "block px-4 py-3 rounded-md text-xl font-medium aria-[current=page]:underline aria-[current=page]:underline-offset-4",
                     isDark
                       ? "text-white/70 hover:text-white hover:bg-white/10"
                       : "text-gray-700 hover:text-[#209BD0] hover:bg-gray-50"
