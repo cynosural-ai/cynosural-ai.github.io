@@ -13,7 +13,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isDark = isHome || pathname === "/pylimid" || pathname === "/historical-archives" || pathname.startsWith("/blog");
+  const isDark = isHome || pathname === "/pylimid" || pathname.startsWith("/blog");
   const t = useTranslation("navbar");
 
   const navigation = [
