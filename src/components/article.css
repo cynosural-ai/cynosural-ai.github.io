@@ -1,5 +1,10 @@
+html:has(.article-page) {
+  /* Keep the browser's overscroll surface dark. */
+  background-color: #040a16;
+}
+
 body:has(.article-page) {
-  background: linear-gradient(180deg, #040a16 0%, #0a1f3d 42rem, #0d2b4e 100%);
+  background: #040a16 linear-gradient(180deg, #040a16 0%, #0a1f3d 42rem, #0d2b4e 100%);
 }
 
 .article-page { min-height: 100vh; color: #dcecfb; font-size: 16px; line-height: 1.8; }
